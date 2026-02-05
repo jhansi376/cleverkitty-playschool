@@ -1,0 +1,827 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | CleverKitty Day Care & Play School</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Gochi+Hand&display=swap"
+        rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Quicksand', 'sans-serif'],
+                        hand: ['Gochi Hand', 'cursive'],
+                    },
+                    colors: {
+                        primary: '#f43f5e', // Rose 500
+                        secondary: '#fbbf24', // Amber 400
+                        accent: '#0ea5e9', // Sky 500
+                        premium: {
+                            gold: '#f59e0b', // Amber 500 (Gold)
+                            lavender: '#f3e8ff', // Purple 100
+                            peach: '#ffedd5', // Orange 100
+                            mint: '#dcfce7', // Emerald 100
+                            sky: '#e0f2fe', // Sky 100
+                            ivory: '#fdfbf7', // Warm White
+                        }
+                    },
+                    borderRadius: {
+                        '4xl': '2.5rem',
+                        '5xl': '3rem',
+                    },
+                    boxShadow: {
+                        'premium': '0 20px 40px -5px rgba(251, 191, 36, 0.15), 0 10px 20px -5px rgba(0, 0, 0, 0.04)', // Gold-tinted shadow
+                        'soft': '0 10px 30px -5px rgba(0, 0, 0, 0.05)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #fdfbf7;
+            /* Ivory */
+        }
+
+        .text-hand {
+            font-family: 'Gochi Hand', cursive;
+        }
+
+        .pattern-dots {
+            background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .pattern-waves {
+            background: radial-gradient(circle at 100% 50%, transparent 20%, #f1f5f9 21%, #f1f5f9 34%, transparent 35%, transparent),
+                radial-gradient(circle at 0% 50%, transparent 20%, #f1f5f9 21%, #f1f5f9 34%, transparent 35%, transparent);
+            background-size: 60px 120px;
+        }
+
+        .blob-shape {
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .glass-card {
+            background: #ffffff;
+            border: 4px solid #f8fafc;
+            /* slate-50 */
+        }
+
+        /* Scroll Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transition: all 1s ease-out;
+        }
+
+        .reveal.from-bottom {
+            transform: translateY(50px);
+        }
+
+        .reveal.from-top {
+            transform: translateY(-50px);
+        }
+
+        .reveal.from-left {
+            transform: translateX(-100px);
+        }
+
+        .reveal.from-right {
+            transform: translateX(100px);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
+
+        /* Initial Nav Animation */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-down {
+            animation: fadeInDown 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.4s ease-out forwards;
+        }
+    </style>
+</head>
+
+<body class="bg-[#fdfbf7] text-stone-700 antialiased overflow-x-hidden">
+
+    <!-- NAVIGATION MENU: V24 Floating Pill -->
+    <div class="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
+        <nav
+            class="pointer-events-auto bg-white/95 backdrop-blur-md shadow-2xl shadow-rose-100/50 rounded-full border-2 border-white px-3 py-3 w-full max-w-5xl flex items-center justify-between transition-all duration-300 hover:shadow-3xl hover:shadow-rose-200/50 hover:bg-white hover:-translate-y-1">
+
+            <!-- 1. Logo (Left) -->
+            <a href="index.html" class="flex items-center gap-3 pl-4 cursor-pointer group">
+                <img src="assets/Clever_Kitty_logo_1-removebg-preview.png"
+                    class="h-14 w-auto object-contain hover:scale-110 transition drop-shadow-md">
+            </a>
+
+            <!-- 2. Menu Items (Center - Desktop) -->
+            <div class="hidden md:flex items-center gap-1 bg-stone-100/50 p-1.5 rounded-full">
+                <a href="index.html"
+                    class="px-6 py-2 rounded-full text-sm font-bold text-stone-600 hover:bg-white hover:text-rose-600 hover:shadow-sm transition">Home</a>
+                <div class="relative group">
+                    <a href="about.html"
+                        class="px-6 py-2 rounded-full text-sm font-bold text-rose-600 bg-white shadow-sm flex items-center gap-1">
+                        About
+                    </a>
+                    <!-- Simple Dropdown for About -->
+                    <div
+                        class="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-48 bg-white rounded-2xl shadow-xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all transform origin-top translate-y-2 group-hover:translate-y-0 text-center">
+                        <a href="about/our-team.html"
+                            class="block w-full py-2 px-4 rounded-xl text-sm font-bold text-stone-600 hover:bg-rose-50 hover:text-rose-600 transition">Our
+                            Team</a>
+                        <a href="about/gallery.html"
+                            class="block w-full py-2 px-4 rounded-xl text-sm font-bold text-stone-600 hover:bg-rose-50 hover:text-rose-600 transition">Gallery</a>
+                        <a href="about/blog.html"
+                            class="block w-full py-2 px-4 rounded-xl text-sm font-bold text-stone-600 hover:bg-rose-50 hover:text-rose-600 transition">Blog</a>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <a href="classes.html"
+                        class="px-6 py-2 rounded-full text-sm font-bold text-stone-600 hover:bg-white hover:text-rose-600 hover:shadow-sm transition flex items-center gap-1">
+                        Classes
+                    </a>
+                    <!-- Simple Dropdown for Classes -->
+                    <div
+                        class="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-56 bg-white rounded-2xl shadow-xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all transform origin-top translate-y-2 group-hover:translate-y-0 text-center">
+                        <a href="classes/play-group.html"
+                            class="block w-full py-2 px-4 rounded-xl text-sm font-bold text-stone-600 hover:bg-rose-50 hover:text-rose-600 transition">PlayGroup</a>
+                        <a href="classes/nursery.html"
+                            class="block w-full py-2 px-4 rounded-xl text-sm font-bold text-stone-600 hover:bg-rose-50 hover:text-rose-600 transition">Nursery</a>
+                        <a href="classes/kindergarten.html"
+                            class="block w-full py-2 px-4 rounded-xl text-sm font-bold text-stone-600 hover:bg-rose-50 hover:text-rose-600 transition">Kindergarten</a>
+                    </div>
+                </div>
+
+                <a href="contact.html"
+                    class="px-6 py-2 rounded-full text-sm font-bold text-stone-600 hover:bg-white hover:text-rose-600 hover:shadow-sm transition">Contact</a>
+            </div>
+
+            <!-- 3. Action Button (Right) -->
+            <div class="flex items-center gap-3 pr-1">
+                <a href="admissions.html"
+                    class="hidden sm:flex items-center gap-2 bg-gradient-to-r from-rose-500 to-orange-400 text-white px-6 py-2.5 rounded-full font-bold text-sm shadow-lg shadow-orange-200 hover:shadow-xl hover:-translate-y-0.5 transition transform active:scale-95">
+                    <span>Enroll Now</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+
+                <!-- Mobile Toggle -->
+                <button id="mobile-toggle"
+                    class="md:hidden w-10 h-10 bg-stone-100 rounded-full flex items-center justify-center text-stone-600">
+                    <i data-lucide="menu" class="w-5 h-5"></i>
+                </button>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="fixed inset-0 z-[70] bg-white/95 backdrop-blur-xl hidden flex-col overflow-y-auto animate-fade-in pt-24 pb-10 px-6">
+        <button id="mobile-close"
+            class="absolute top-6 right-6 w-12 h-12 bg-red-100 text-red-500 rounded-full flex items-center justify-center shadow-lg hover:bg-red-200 hover:scale-110 transition z-50">
+            <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+
+        <div class="w-full max-w-md mx-auto space-y-4">
+            <a href="index.html"
+                class="block text-2xl font-bold text-stone-800 hover:text-red-500 py-2 border-b border-stone-100">Home</a>
+
+            <!-- Mobile Dropdown: About -->
+            <div class="border-b border-stone-100">
+                <div class="flex items-center justify-between py-2">
+                    <a href="about.html" class="text-2xl font-bold text-rose-600 hover:text-rose-500 flex-grow">About
+                        Us</a>
+                    <button onclick="toggleMobileSubmenu('mobile-about')"
+                        class="p-2 text-stone-800 hover:text-rose-500">
+                        <i data-lucide="chevron-down" class="w-6 h-6 transition-transform" id="icon-mobile-about"></i>
+                    </button>
+                </div>
+                <div id="mobile-about" class="hidden pl-4 space-y-3 pb-4">
+                    <a href="about/our-team.html"
+                        class="block text-lg font-medium text-stone-500 hover:text-rose-500">Our Team</a>
+                    <a href="about/gallery.html"
+                        class="block text-lg font-medium text-stone-500 hover:text-rose-500">Gallery</a>
+                    <a href="about/blog.html"
+                        class="block text-lg font-medium text-stone-500 hover:text-rose-500">Blog</a>
+                </div>
+            </div>
+
+            <!-- Mobile Dropdown: Programs -->
+            <div class="border-b border-stone-100">
+                <div class="flex items-center justify-between py-2">
+                    <a href="classes.html"
+                        class="text-2xl font-bold text-stone-800 hover:text-rose-500 flex-grow">Programs</a>
+                    <button onclick="toggleMobileSubmenu('mobile-classes')"
+                        class="p-2 text-stone-800 hover:text-rose-500">
+                        <i data-lucide="chevron-down" class="w-6 h-6 transition-transform" id="icon-mobile-classes"></i>
+                    </button>
+                </div>
+                <div id="mobile-classes" class="hidden pl-4 space-y-3 pb-4">
+                    <a href="classes/play-group.html"
+                        class="block text-lg font-medium text-stone-500 hover:text-rose-500">PlayGroup</a>
+                    <a href="classes/nursery.html"
+                        class="block text-lg font-medium text-stone-500 hover:text-rose-500">Nursery</a>
+                    <a href="classes/kindergarten.html"
+                        class="block text-lg font-medium text-stone-500 hover:text-rose-500">Kindergarten</a>
+                </div>
+            </div>
+
+            <a href="contact.html"
+                class="block text-2xl font-bold text-stone-800 hover:text-red-500 py-2 border-b border-stone-100">Contact</a>
+        </div>
+
+        <div class="mt-8 text-center">
+            <a href="admissions.html"
+                class="inline-block bg-gradient-to-r from-rose-500 to-orange-400 text-white px-10 py-4 rounded-full font-bold text-xl shadow-xl shadow-orange-200 w-full max-w-md">Enroll
+                Now</a>
+        </div>
+    </div>
+
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="relative pt-40 pb-24 lg:pt-56 lg:pb-32 overflow-hidden ">
+            <!-- Background Image & Overlay -->
+            <div class="absolute inset-0 z-0">
+                <img src="./assets/hero_joy.png" class="w-full h-full object-cover " alt="Background">
+                <div class="absolute inset-0 bg-gradient-to-b from-orange-50/90 via-white/30 to-transparent"></div>
+            </div>
+
+            <!-- Floating Decorations -->
+            <div class="absolute top-32 left-10 text-6xl animate-float opacity-60 z-10">🌟</div>
+            <div class="absolute bottom-20 right-10 text-7xl animate-float opacity-50 z-10"
+                style="animation-duration: 4s">🎈</div>
+            <div class="absolute top-40 right-20 text-5xl animate-float opacity-40 z-10" style="animation-delay: 2s">🦋
+            </div>
+
+
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 text-center">
+                <div
+                    class="reveal from-top inline-flex items-center gap-2 px-6 py-2 bg-white rounded-full font-bold text-sm text-premium-gold shadow-sm border border-orange-100 mb-10 mx-auto">
+                    ❤️ Since 2012
+                </div>
+                <h1
+                    class="text-5xl sm:text-6xl lg:text-8xl font-bold text-slate-800 leading-[1.1] reveal from-left mb-8">
+                    A Journey of <br>
+                    <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-rose-600 via-orange-500 to-amber-500 inline-block filter drop-shadow-sm pb-2">
+                        Love & Learning
+                    </span>
+                </h1>
+                <p
+                    class="text-xl sm:text-2xl text-white leading-relaxed max-w-3xl mx-auto font-medium reveal from-right mb-12">
+                    CleverKitty is a magical second home where curiosity is sparked, and every child is nurtured with
+                    compassion and wonder.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center reveal from-bottom">
+                    <a href="#dual-focus"
+                        class="px-12 py-5 bg-gradient-to-r from-rose-500 to-orange-400 text-white rounded-full font-bold text-xl shadow-xl shadow-orange-200 hover:shadow-2xl hover:-translate-y-1 transition transform flex items-center gap-2 justify-center">
+                        Explore Our Vision <i data-lucide="chevron-down" class="w-5 h-5"></i>
+                    </a>
+                    <a href="contact.html"
+                        class="px-12 py-5 bg-white text-slate-700 border-2 border-slate-100 rounded-full font-bold text-xl hover:bg-slate-50 hover:-translate-y-1 transition transform flex items-center gap-2 justify-center">
+                        Visit Our School
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- OUR STORY -->
+        <section id="our-story" class="py-24 bg-white relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="relative reveal from-left">
+                        <div class="absolute inset-0 bg-rose-100 rounded-[3rem] rotate-3 opacity-50"></div>
+                        <img src="https://www.educationcongress.org/images/speakers/pritam-agrawal.jpg"
+                            class="relative z-10 w-full rounded-[3rem] shadow-2xl transition duration-700 hover:rotate-0 -rotate-2 border-8 border-white object-cover h-[500px]"
+                            alt="Our Story">
+                    </div>
+
+                    <div class="space-y-8 reveal from-right">
+                        <span class="text-rose-600 font-bold tracking-widest uppercase text-sm">Founded with Love</span>
+                        <h2 class="text-4xl lg:text-5xl font-bold text-slate-800">
+                            Started with a <span class="text-hand text-rose-500">Simple Dream</span>
+                        </h2>
+                        <p class="text-lg text-slate-600 leading-relaxed">
+                            Ten years ago, we looked for a playschool that felt less like a classroom and more like a
+                            living room. We wanted a place where labels didn't define kids, where laughter was the
+                            primary language, and every
+                            scribble was a celebrated masterpiece.
+                        </p>
+                        <p class="text-lg text-slate-600 leading-relaxed">
+                            CleverKitty was born from that vision—to provide a magical sanctuary where safety meets
+                            curiosity, and every child is loved like family.
+                        </p>
+                        <div class="pt-6 flex items-center gap-4">
+                            <div class="w-16 h-16 bg-rose-50 rounded-full flex items-center justify-center text-3xl">
+                                🖋️
+                            </div>
+                            <div>
+                                <p class="font-bold text-slate-800 text-xl">Sarah Jenkins</p>
+                                <p class="text-hand text-rose-500 text-2xl">Founder & Director</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DUAL FOCUS: DAYCARE & PLAYSCHOOL (Cocoa Section) -->
+        <section id="dual-focus" class="py-24 relative overflow-hidden" style="background-color: #6B3E2E;">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16 reveal from-top">
+                <span class="text-orange-400 font-bold tracking-widest uppercase text-sm">Our Expertise</span>
+                <h2 class="text-4xl lg:text-5xl font-bold text-white mt-2">Tailored for <span
+                        class="text-hand text-orange-400">Every Heart</span></h2>
+                <p class="text-orange-100/90 mt-4 max-w-2xl mx-auto text-lg font-medium">We offer two distinct
+                    heart-centered programs
+                    designed to meet the unique needs of your child's growth.</p>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 relative z-10">
+                <!-- Daycare Card -->
+                <div
+                    class="bg-white rounded-[3rem] p-12 border-4 border-orange-100 hover:border-orange-200 shadow-xl transition-all duration-500 hover:-translate-y-2 reveal from-left">
+                    <div
+                        class="w-20 h-20 bg-orange-100 rounded-3xl flex items-center justify-center text-orange-500 mb-8">
+                        <i data-lucide="home" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-slate-800 mb-6">Premium Daycare</h3>
+                    <p class="text-slate-600 mb-8 text-lg leading-relaxed font-medium">
+                        A warm, nurturing "Home Away From Home" environment focusing on safety, nutrition, and emotional
+                        security.
+                    </p>
+                    <ul class="space-y-4 mb-10 text-left">
+                        <li class="flex items-center gap-3 text-slate-700">
+                            <div
+                                class="w-6 h-6 bg-orange-500 text-white rounded-full flex items-center justify-center text-[10px]">
+                                <i data-lucide="check"></i>
+                            </div>
+                            <span>Organic, Freshly Prepared Meals</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-700">
+                            <div
+                                class="w-6 h-6 bg-orange-500 text-white rounded-full flex items-center justify-center text-[10px]">
+                                <i data-lucide="check"></i>
+                            </div>
+                            <span>Personalized Nap & Routine Schedules</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-700">
+                            <div
+                                class="w-6 h-6 bg-orange-500 text-white rounded-full flex items-center justify-center text-[10px]">
+                                <i data-lucide="check"></i>
+                            </div>
+                            <span>CCTV Access for Peace of Mind</span>
+                        </li>
+                    </ul>
+                    <a href="contact.html"
+                        class="inline-block px-8 py-3 bg-orange-500 text-white rounded-full font-bold shadow-lg shadow-orange-100 hover:bg-orange-600 transition">Learn
+                        More</a>
+                </div>
+
+                <!-- Playschool Card -->
+                <div
+                    class="bg-white rounded-[3rem] p-12 border-4 border-purple-100 hover:border-purple-200 shadow-xl transition-all duration-500 hover:-translate-y-2 reveal from-right delay-200">
+                    <div
+                        class="w-20 h-20 bg-purple-100 rounded-3xl flex items-center justify-center text-purple-500 mb-8">
+                        <i data-lucide="graduation-cap" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-slate-800 mb-6">Kids Playschool</h3>
+                    <p class="text-slate-600 mb-8 text-lg leading-relaxed">
+                        An inspiring Montessori-led curriculum that sparks curiosity, independence, and early academic
+                        readiness.
+                    </p>
+                    <ul class="space-y-4 mb-10 text-left">
+                        <li class="flex items-center gap-3 text-slate-700">
+                            <div
+                                class="w-6 h-6 bg-purple-500 text-white rounded-full flex items-center justify-center text-[10px]">
+                                <i data-lucide="check"></i>
+                            </div>
+                            <span>Montessori-Inspired Environments</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-700">
+                            <div
+                                class="w-6 h-6 bg-purple-500 text-white rounded-full flex items-center justify-center text-[10px]">
+                                <i data-lucide="check"></i>
+                            </div>
+                            <span>Early Literacy & Numeracy Focus</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-700">
+                            <div
+                                class="w-6 h-6 bg-purple-500 text-white rounded-full flex items-center justify-center text-[10px]">
+                                <i data-lucide="check"></i>
+                            </div>
+                            <span>Social and Life-Skills Training</span>
+                        </li>
+                    </ul>
+                    <a href="classes.html"
+                        class="inline-block px-8 py-3 bg-purple-500 text-white rounded-full font-bold shadow-lg shadow-purple-100 hover:bg-purple-600 transition">Explore
+                        Classes</a>
+                </div>
+            </div>
+
+
+        </section>
+
+        <!-- VALUES GRID: THE PROMISE (White Section) -->
+        <section class="py-24 bg-white relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-20 reveal from-top">
+                    <h2 class="text-4xl lg:text-6xl font-bold text-slate-800">The CleverKitty <span
+                            class="text-hand text-orange-500">Promise</span></h2>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Value 1 -->
+                    <div
+                        class="group p-10 rounded-[3rem] bg-white border-4 border-slate-100 hover:border-rose-100 hover:-translate-y-2 transition-all duration-500 reveal from-bottom">
+                        <div
+                            class="w-16 h-16 bg-rose-50 rounded-2xl flex items-center justify-center text-rose-500 mb-8 group-hover:scale-110 transition-transform">
+                            <i data-lucide="heart" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-4">Emotional Safety</h3>
+                        <p class="text-slate-600 leading-relaxed text-lg">We prioritize emotional well-being as much as
+                            physical safety. Every child has a primary caregiver for ultimate comfort.</p>
+                    </div>
+
+                    <!-- Value 2 -->
+                    <div
+                        class="group p-10 rounded-[3rem] bg-white border-4 border-slate-100 hover:border-orange-100 hover:-translate-y-2 transition-all duration-500 reveal from-bottom delay-200">
+                        <div
+                            class="w-16 h-16 bg-orange-50 rounded-2xl flex items-center justify-center text-orange-500 mb-8 group-hover:scale-110 transition-transform">
+                            <i data-lucide="leaf" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-4">Nature Learning</h3>
+                        <p class="text-slate-600 leading-relaxed text-lg">Daily garden time! We learn from bugs, leaves,
+                            and mud. Connecting with nature grounds our little ones' spirits.</p>
+                    </div>
+
+                    <!-- Value 3 -->
+                    <div
+                        class="group p-10 rounded-[3rem] bg-white border-4 border-slate-100 hover:border-emerald-100 hover:-translate-y-2 transition-all duration-500 reveal from-bottom delay-400">
+                        <div
+                            class="w-16 h-16 bg-emerald-50 rounded-2xl flex items-center justify-center text-emerald-500 mb-8 group-hover:scale-110 transition-transform">
+                            <i data-lucide="music" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-4">Joyful Discovery</h3>
+                        <p class="text-slate-600 leading-relaxed text-lg">No rote learning. We use music, art, and play
+                            to teach concepts. If they aren't smiling, we aren't doing it right!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TEAM SECTION (Cocoa Section) -->
+        <section id="our-team" class="py-24 relative overflow-hidden" style="background-color: #6B3E2E;">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-20 reveal from-top">
+                    <h2 class="text-4xl lg:text-5xl font-bold text-white uppercase italic tracking-tighter">Our Happy
+                        <span class="text-hand text-orange-400 normal-case not-italic">Helpers</span>
+                    </h2>
+                </div>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12">
+                    <!-- Member 1 -->
+                    <div class="text-center group reveal from-bottom">
+                        <div class="relative inline-block mb-6">
+                            <div
+                                class="absolute inset-0 bg-rose-200 rounded-full blur-2xl opacity-40 group-hover:scale-125 transition duration-500">
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=400"
+                                class="w-44 h-44 object-cover rounded-full border-4 border-white shadow-xl relative z-10 transition-transform group-hover:scale-105"
+                                alt="Sarah">
+                            <div class="absolute -bottom-2 -right-2 z-20 bg-white p-2 rounded-full text-2xl shadow-md">
+                                👑</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Sarah Jenkins</h3>
+                        <p class="text-orange-400 font-bold uppercase text-[10px] tracking-widest mt-1">School Director
+                        </p>
+                    </div>
+
+                    <!-- Member 2 -->
+                    <div class="text-center group reveal from-bottom delay-200">
+                        <div class="relative inline-block mb-6">
+                            <div
+                                class="absolute inset-0 bg-sky-200 rounded-full blur-2xl opacity-40 group-hover:scale-125 transition duration-500">
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400"
+                                class="w-44 h-44 object-cover rounded-full border-4 border-white shadow-xl relative z-10 transition-transform group-hover:scale-105"
+                                alt="Priya">
+                            <div class="absolute -bottom-2 -right-2 z-20 bg-white p-2 rounded-full text-2xl shadow-md">
+                                🎨</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Priya Reddy</h3>
+                        <p class="text-orange-400 font-bold uppercase text-[10px] tracking-widest mt-1">Art Specialist
+                        </p>
+                    </div>
+
+                    <!-- Member 3 -->
+                    <div class="text-center group reveal from-bottom delay-400">
+                        <div class="relative inline-block mb-6">
+                            <div
+                                class="absolute inset-0 bg-emerald-200 rounded-full blur-2xl opacity-40 group-hover:scale-125 transition duration-500">
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=400"
+                                class="w-44 h-44 object-cover rounded-full border-4 border-white shadow-xl relative z-10 transition-transform group-hover:scale-105"
+                                alt="Anjali">
+                            <div class="absolute -bottom-2 -right-2 z-20 bg-white p-2 rounded-full text-2xl shadow-md">
+                                🎵</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Anjali Rao</h3>
+                        <p class="text-orange-400 font-bold uppercase text-[10px] tracking-widest mt-1">Music Lead</p>
+                    </div>
+
+                    <!-- Member 4 -->
+                    <div class="text-center group reveal from-bottom delay-600">
+                        <div class="relative inline-block mb-6">
+                            <div
+                                class="absolute inset-0 bg-orange-200 rounded-full blur-2xl opacity-40 group-hover:scale-125 transition duration-500">
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400"
+                                class="w-44 h-44 object-cover rounded-full border-4 border-white shadow-xl relative z-10 transition-transform group-hover:scale-105"
+                                alt="Lakshmi">
+                            <div class="absolute -bottom-2 -right-2 z-20 bg-white p-2 rounded-full text-2xl shadow-md">
+                                🧸</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Lakshmi N.</h3>
+                        <p class="text-orange-400 font-bold uppercase text-[10px] tracking-widest mt-1">Play Mentor</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PREMIUM CTA (Yellow Card Style) -->
+        <section class="py-24 bg-white relative overflow-hidden">
+            <div class="max-w-6xl mx-auto px-4">
+                <div
+                    class="bg-gradient-to-r from-rose-500 to-orange-500 rounded-[4rem] py-16 px-8 lg:py-24 text-center relative overflow-hidden reveal from-bottom shadow-2xl shadow-orange-200">
+                    <!-- Subtle Decoration -->
+                    <div class="absolute top-10 right-10 text-8xl opacity-10 animate-spin-slow">🌟</div>
+                    <div class="absolute bottom-10 left-10 text-8xl opacity-10 animate-float">✨</div>
+
+                    <h2 class="text-4xl lg:text-6xl font-bold text-white mb-10 relative z-10">Want to see the magic
+                        <br> for yourself?
+                    </h2>
+                    <a href="contact.html"
+                        class="inline-block bg-white text-rose-600 px-12 py-5 rounded-full font-bold text-xl shadow-xl hover:scale-105 transition hover:shadow-orange-200/50 relative z-10">
+                        Schedule a Free Tour 🎈
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER: V2 "Enchanted Garden" -->
+    <footer class="bg-emerald-950 text-emerald-100/80 py-16 md:py-24 relative overflow-hidden font-sans">
+        <!-- Grass Top Divider -->
+        <div class="absolute top-0 left-0 w-full overflow-hidden leading-none z-20">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none" class="relative block w-full h-16 fill-white">
+                <path
+                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z">
+                </path>
+            </svg>
+        </div>
+
+        <!-- Fireflies -->
+        <div class="absolute inset-0 z-0 pointer-events-none">
+            <div
+                class="absolute top-1/4 left-1/4 w-1 h-1 bg-yellow-400 rounded-full animate-float opacity-40 shadow-[0_0_10px_rgba(250,204,21,0.8)]">
+            </div>
+            <div
+                class="absolute top-3/4 right-1/3 w-1.5 h-1.5 bg-yellow-400 rounded-full animate-float delay-700 opacity-60 shadow-[0_0_15px_rgba(250,204,21,0.8)]">
+            </div>
+            <div
+                class="absolute top-1/3 right-10 w-2 h-2 bg-yellow-400 rounded-full animate-wiggle delay-1000 opacity-30 shadow-[0_0_20px_rgba(250,204,21,0.8)]">
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 relative z-10 pt-12">
+            <div class="grid md:grid-cols-4 gap-12 mb-16">
+                <!-- Col 1: Brand & Newsletter -->
+                <div class="md:col-span-1 space-y-6">
+                    <a href="index.html" class="flex items-center gap-3 hover:opacity-90 transition inline-block">
+                        <img src="assets/Clever_Kitty_logo_1-removebg-preview.png"
+                            class="h-24 w-auto object-contain bg-white rounded-2xl p-2 shadow-lg">
+                    </a>
+                    <p class="text-sm leading-relaxed text-emerald-200/70">
+                        Nurturing curiosity in our enchanted garden of learning. Where every day is a new discovery.
+                    </p>
+
+                    <!-- Integrated Newsletter -->
+                    <div class="bg-white/5 backdrop-blur-sm p-4 rounded-2xl border border-white/10 mt-6">
+                        <label class="block text-xs font-bold text-amber-300 uppercase tracking-wider mb-2">Join our
+                            Story</label>
+                        <div class="flex gap-2">
+                            <input type="email" placeholder="Email..."
+                                class="bg-white/10 border-none rounded-lg px-3 py-2 text-sm text-white placeholder-emerald-400/50 w-full focus:ring-1 focus:ring-amber-300 outline-none">
+                            <button
+                                class="bg-amber-400 text-emerald-900 rounded-lg p-2 hover:bg-amber-300 transition shadow-lg hover:shadow-amber-400/20">
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Col 2: Programs -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6 flex items-center gap-2"><i data-lucide="sprout"
+                            class="w-4 h-4 text-emerald-400"></i> Programs</h4>
+                    <ul class="space-y-4 text-sm font-medium">
+                        <li><a href="classes/play-group.html"
+                                class="hover:text-amber-300 transition flex items-center gap-2 group"><span
+                                    class="w-1.5 h-1.5 bg-emerald-600 rounded-full group-hover:bg-amber-300 transition"></span>
+                                Play Group</a></li>
+                        <li><a href="classes/nursery.html"
+                                class="hover:text-amber-300 transition flex items-center gap-2 group"><span
+                                    class="w-1.5 h-1.5 bg-emerald-600 rounded-full group-hover:bg-amber-300 transition"></span>
+                                Nursery</a></li>
+                        <li><a href="classes/kindergarten.html"
+                                class="hover:text-amber-300 transition flex items-center gap-2 group"><span
+                                    class="w-1.5 h-1.5 bg-emerald-600 rounded-full group-hover:bg-amber-300 transition"></span>
+                                Kindergarten</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Quick Links -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6 flex items-center gap-2"><i data-lucide="compass"
+                            class="w-4 h-4 text-sky-400"></i> Quick Links</h4>
+                    <ul class="space-y-4 text-sm font-medium">
+                        <li><a href="index.html" class="hover:text-amber-300 transition block">Home</a></li>
+                        <li><a href="about.html" class="hover:text-amber-300 transition block">About</a></li>
+                        <li><a href="about/our-team.html" class="hover:text-amber-300 transition block">Our Team</a>
+                        </li>
+                        <li><a href="about/gallery.html" class="hover:text-amber-300 transition block">Gallery</a>
+                        </li>
+                        <li><a href="about/blog.html" class="hover:text-amber-300 transition block">Blog</a></li>
+
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contact -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6 flex items-center gap-2"><i data-lucide="map-pin"
+                            class="w-4 h-4 text-rose-400"></i> Visit Us</h4>
+                    <address class="not-italic text-sm space-y-4">
+                        <p class="flex items-start gap-3">
+                            <span class="mt-1">📍</span>
+                            <span>123 Sunshine Lane,<br>Happy Valley, AP - 530003</span>
+                        </p>
+                        <p class="flex items-center gap-3">
+                            <span>📞</span>
+                            <a href="tel:+919876543210" class="font-bold text-amber-300 hover:text-white transition">+91
+                                98765 43210</a>
+                        </p>
+                        <p class="flex items-center gap-3">
+                            <span>💌</span>
+                            <a href="mailto:hello@cleverkitty.com"
+                                class="hover:text-white transition">hello@cleverkitty.com</a>
+                        </p>
+                        <!-- Socials -->
+                        <div class="flex gap-4 mt-6">
+                            <a href="#"
+                                class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-blue-600 transition hover:-translate-y-1"><i
+                                    data-lucide="facebook" class="w-5 h-5"></i></a>
+                            <a href="#"
+                                class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-rose-600 transition hover:-translate-y-1"><i
+                                    data-lucide="instagram" class="w-5 h-5"></i></a>
+                            <a href="#"
+                                class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-red-600 transition hover:-translate-y-1"><i
+                                    data-lucide="youtube" class="w-5 h-5"></i></a>
+                            <a href="#"
+                                class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-sky-500 transition hover:-translate-y-1"><i
+                                    data-lucide="twitter" class="w-5 h-5"></i></a>
+                        </div>
+                    </address>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div
+                class="border-t border-emerald-900 pt-8 text-center text-xs text-emerald-600 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p>&copy; 2024 CleverKitty Play School. Growing with love.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-emerald-400">Privacy Policy</a>
+                    <a href="#" class="hover:text-emerald-400">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        // Use a safer way to call lucide after ensuring library is defined
+        window.addEventListener('DOMContentLoaded', () => {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            } else {
+                console.error('Lucide could not be loaded.');
+            }
+
+            // Mobile Menu Toggle logic
+            const mobileToggle = document.getElementById('mobile-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileClose = document.getElementById('mobile-close');
+
+            function toggleMenu() {
+                mobileMenu.classList.toggle('hidden');
+                mobileMenu.classList.toggle('flex');
+                document.body.classList.toggle('overflow-hidden');
+            }
+
+            if (mobileToggle) mobileToggle.addEventListener('click', toggleMenu);
+            if (mobileClose) mobileClose.addEventListener('click', toggleMenu);
+
+            // Close menu when clicking any link
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('flex');
+                    document.body.classList.remove('overflow-hidden');
+                });
+            });
+
+            const observerOptions = { threshold: 0.1 };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        });
+
+        // Mobile Submenu Toggle - Global
+        window.toggleMobileSubmenu = function (submenuId) {
+            const submenu = document.getElementById(submenuId);
+            const icon = document.getElementById('icon-' + submenuId);
+
+            if (submenu.classList.contains('hidden')) {
+                submenu.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                submenu.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,838 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Programs | CleverKitty Play School</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Gochi+Hand&display=swap"
+        rel="stylesheet">
+    <!-- Lucide Icons - Using UMD build for reliability -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <style>
+        :root {
+            --color-lemon-100: #fef9c3;
+            --color-lemon-400: #facc15;
+            --color-mint-100: #dcfce7;
+            --color-mint-400: #4ade80;
+            --color-sky-100: #e0f2fe;
+            --color-sky-400: #38bdf8;
+            --color-rose-500: #f43f5e;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: #fdfbf7;
+        }
+
+        .font-hand {
+            font-family: 'Gochi Hand', cursive;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-6px) scale(1.01);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .shape-blob {
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        }
+
+        .shape-pill-large {
+            border-radius: 100px;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .reveal {
+            opacity: 0;
+            transition: all 1s cubic-bezier(0.5, 0, 0, 1);
+            will-change: transform, opacity;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
+
+        .reveal-up {
+            transform: translateY(50px);
+        }
+
+        .reveal-down {
+            transform: translateY(-50px);
+        }
+
+        .reveal-left {
+            transform: translateX(-50px);
+        }
+
+        .reveal-right {
+            transform: translateX(50px);
+        }
+
+        .reveal-zoom {
+            transform: scale(0.9);
+        }
+
+        .delay-200 {
+            transition-delay: 0.2s;
+        }
+
+        .delay-400 {
+            transition-delay: 0.4s;
+        }
+
+        .delay-600 {
+            transition-delay: 0.6s;
+        }
+
+        .bg-gradient-lemon {
+            background: linear-gradient(135deg, #fefce8 0%, #fef9c3 100%);
+        }
+    </style>
+</head>
+
+<body class="bg-[#fdfbf7] text-stone-700 antialiased overflow-x-hidden">
+
+    <!-- NAVIGATION MENU: V24 Floating Pill -->
+    <div class="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
+        <nav
+            class="pointer-events-auto bg-white shadow-2xl shadow-rose-100/50 rounded-full border-2 border-white px-3 py-3 w-full max-w-5xl flex items-center justify-between transition-all duration-300 hover:shadow-3xl hover:shadow-rose-200/50 hover:bg-white hover:-translate-y-1">
+
+            <!-- 1. Logo (Left) -->
+            <a href="index.html" class="flex items-center gap-3 pl-4 cursor-pointer group">
+                <img src="assets/Clever_Kitty_logo_1-removebg-preview.png"
+                    class="h-14 w-auto object-contain hover:scale-110 transition drop-shadow-md">
+            </a>
+
+            <!-- 2. Menu Items (Center - Desktop) -->
+            <div class="hidden md:flex items-center gap-1 bg-stone-100/50 p-1.5 rounded-full">
+                <a href="index.html"
+                    class="px-6 py-2 rounded-full text-sm font-bold text-stone-600 hover:bg-white hover:text-red-600 hover:shadow-sm transition">Home</a>
+                <div class="relative group">
+                    <a href="about.html"
+                        class="px-6 py-2 rounded-full text-sm font-bold text-stone-600 hover:bg-white hover:text-rose-600 hover:shadow-sm transition flex items-center gap-1">
+                        About
+                    </a>
+                    <!-- Simple Dropdown for About -->
+                    <div
+                        class="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-48 bg-white rounded-2xl shadow-xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all transform origin-top translate-y-2 group-hover:translate-y-0 text-center">
+                        <a href="about/our-team.html"
+                            class="block w-full py-2 px-4 rounded-xl text-sm font-bold text-stone-600 hover:bg-rose-50 hover:text-rose-600 transition">Our
+                            Team</a>
+                        <a href="about/gallery.html"
+                            class="block w-full py-2 px-4 rounded-xl text-sm font-bold text-stone-600 hover:bg-rose-50 hover:text-rose-600 transition">Gallery</a>
+                        <a href="about/blog.html"
+                            class="block w-full py-2 px-4 rounded-xl text-sm font-bold text-stone-600 hover:bg-rose-50 hover:text-rose-600 transition">Blog</a>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <a href="classes.html"
+                        class="px-6 py-2 rounded-full text-sm font-bold text-rose-600 bg-white shadow-sm flex items-center gap-1">
+                        Classes
+                    </a>
+                    <!-- Simple Dropdown for Classes -->
+                    <div
+                        class="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-56 bg-white rounded-2xl shadow-xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all transform origin-top translate-y-2 group-hover:translate-y-0 text-center">
+                        <a href="classes/play-group.html"
+                            class="block w-full py-2 px-4 rounded-xl text-sm font-bold text-stone-600 hover:bg-rose-50 hover:text-rose-600 transition">PlayGroup</a>
+                        <a href="classes/nursery.html"
+                            class="block w-full py-2 px-4 rounded-xl text-sm font-bold text-stone-600 hover:bg-rose-50 hover:text-rose-600 transition">Nursery</a>
+                        <a href="classes/kindergarten.html"
+                            class="block w-full py-2 px-4 rounded-xl text-sm font-bold text-stone-600 hover:bg-rose-50 hover:text-rose-600 transition">Kindergarten</a>
+                    </div>
+                </div>
+
+                <a href="contact.html"
+                    class="px-6 py-2 rounded-full text-sm font-bold text-stone-600 hover:bg-white hover:text-rose-600 hover:shadow-sm transition">Contact</a>
+            </div>
+
+            <!-- 3. Action Button (Right) -->
+            <div class="flex items-center gap-3 pr-1">
+                <a href="admissions.html"
+                    class="hidden sm:flex items-center gap-2 bg-gradient-to-r from-rose-500 to-orange-400 text-white px-6 py-2.5 rounded-full font-bold text-sm shadow-lg shadow-orange-200 hover:shadow-xl hover:-translate-y-0.5 transition transform active:scale-95">
+                    <span>Enroll Now</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+
+                <!-- Mobile Toggle -->
+                <button id="mobile-toggle"
+                    class="md:hidden w-10 h-10 bg-stone-100 rounded-full flex items-center justify-center text-stone-600">
+                    <i data-lucide="menu" class="w-5 h-5"></i>
+                </button>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="fixed inset-0 z-[60] bg-white hidden flex-col overflow-y-auto animate-fade-in pt-24 pb-10 px-6">
+        <button id="mobile-close"
+            class="absolute top-6 right-6 w-12 h-12 bg-red-100 text-red-500 rounded-full flex items-center justify-center shadow-lg hover:bg-red-200 hover:scale-110 transition z-50">
+            <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+
+        <div class="w-full max-w-md mx-auto space-y-4">
+            <a href="index.html"
+                class="block text-2xl font-bold text-stone-800 hover:text-red-500 py-2 border-b border-stone-100">Home</a>
+
+            <!-- Mobile Dropdown: About -->
+            <div class="border-b border-stone-100">
+                <div class="flex items-center justify-between py-2">
+                    <a href="about.html" class="text-2xl font-bold text-stone-800 hover:text-rose-500 flex-grow">About
+                        Us</a>
+                    <button onclick="toggleMobileSubmenu('mobile-about')"
+                        class="p-2 text-stone-800 hover:text-rose-500">
+                        <i data-lucide="chevron-down" class="w-6 h-6 transition-transform" id="icon-mobile-about"></i>
+                    </button>
+                </div>
+                <div id="mobile-about" class="hidden pl-4 space-y-3 pb-4">
+                    <a href="about/our-team.html"
+                        class="block text-lg font-medium text-stone-500 hover:text-rose-500">Our Team</a>
+                    <a href="about/gallery.html"
+                        class="block text-lg font-medium text-stone-500 hover:text-rose-500">Gallery</a>
+                    <a href="about/blog.html"
+                        class="block text-lg font-medium text-stone-500 hover:text-rose-500">Blog</a>
+                </div>
+            </div>
+
+            <!-- Mobile Dropdown: Programs -->
+            <div class="border-b border-stone-100">
+                <div class="flex items-center justify-between py-2">
+                    <a href="classes.html"
+                        class="text-2xl font-bold text-rose-600 hover:text-rose-500 flex-grow">Programs</a>
+                    <button onclick="toggleMobileSubmenu('mobile-classes')"
+                        class="p-2 text-stone-800 hover:text-rose-500">
+                        <i data-lucide="chevron-down" class="w-6 h-6 transition-transform" id="icon-mobile-classes"></i>
+                    </button>
+                </div>
+                <div id="mobile-classes" class="hidden pl-4 space-y-3 pb-4">
+                    <a href="classes/play-group.html"
+                        class="block text-lg font-medium text-stone-500 hover:text-rose-500">PlayGroup</a>
+                    <a href="classes/nursery.html"
+                        class="block text-lg font-medium text-stone-500 hover:text-rose-500">Nursery</a>
+                    <a href="classes/kindergarten.html"
+                        class="block text-lg font-medium text-stone-500 hover:text-rose-500">Kindergarten</a>
+                </div>
+            </div>
+
+            <a href="contact.html"
+                class="block text-2xl font-bold text-stone-800 hover:text-red-500 py-2 border-b border-stone-100">Contact</a>
+        </div>
+
+        <div class="mt-8 text-center">
+            <a href="admissions.html"
+                class="inline-block bg-gradient-to-r from-rose-500 to-orange-400 text-white px-10 py-4 rounded-full font-bold text-xl shadow-xl shadow-orange-200 w-full max-w-md">Enroll
+                Now</a>
+        </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section class="relative min-h-[70vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="assets/hero_classes.png" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-b from-orange-50/40 via-transparent to-transparent"></div>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-4 text-center relative z-10 pt-20">
+            <nav
+                class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-5 py-2.5 rounded-full mb-8 shadow-sm text-sm font-bold text-white border border-white/30">
+                <a href="index.html" class="hover:text-rose-500 transition">Home</a>
+                <span class="text-stone-300">/</span>
+                <span class="text-rose-500">Classes</span>
+            </nav>
+
+            <h1 class="text-5xl md:text-8xl font-bold text-white mb-8 drop-shadow-lg leading-tight">
+                Where Learning <br> <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-orange-400 font-hand">Feels
+                    Like Magic!</span>
+            </h1>
+            <p
+                class="text-lg md:text-2xl font-medium text-white max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow-md">
+                Discover our playful programs designed to spark curiosity, build confidence, and create endless smiles.
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="classes/play-group.html"
+                    class="bg-yellow-400 text-stone-900 px-8 py-3 rounded-full font-bold shadow-lg shadow-yellow-200 hover:scale-105 transition transform flex items-center gap-2 relative z-40">
+                    🐣 PlayGroup
+                </a>
+                <a href="classes/nursery.html"
+                    class="bg-mint-400 text-white px-8 py-3 rounded-full font-bold shadow-lg shadow-green-200 hover:scale-105 transition transform flex items-center gap-2 relative z-40"
+                    style="background-color: var(--color-mint-400);">
+                    🌱 Nursery
+                </a>
+                <a href="classes/kindergarten.html"
+                    class="bg-sky-400 text-white px-8 py-3 rounded-full font-bold shadow-lg shadow-sky-200 hover:scale-105 transition transform flex items-center gap-2 relative z-40"
+                    style="background-color: var(--color-sky-400);">
+                    🚀 Kindergarten
+                </a>
+            </div>
+        </div>
+
+        <!-- Floating Icons -->
+        <div
+            class="absolute top-32 left-4 md:left-20 text-4xl md:text-8xl animate-float opacity-60 hover:opacity-100 transition cursor-pointer transform hover:rotate-12">
+            🎨</div>
+        <div class="absolute bottom-32 right-4 md:right-20 text-4xl md:text-8xl animate-float opacity-60 hover:opacity-100 transition cursor-pointer transform hover:-rotate-12"
+            style="animation-delay: 1.5s">🧸</div>
+        <div class="absolute top-40 right-20 hidden md:block text-6xl animate-float opacity-50 hover:opacity-100 transition"
+            style="animation-delay: 3s">☀️</div>
+    </section>
+
+    <!-- PROGRAM: PLAYGROUP -->
+    <section id="playgroup" class="py-16 md:py-24 relative overflow-hidden bg-white">
+
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+                <!-- Text Content -->
+                <div class="reveal reveal-right order-2 md:order-1">
+                    <div
+                        class="inline-flex items-center gap-2 py-2 px-4 bg-yellow-100 text-yellow-700 font-bold rounded-full mb-6 text-sm uppercase tracking-wider shadow-sm">
+                        <span class="text-lg">🐣</span> 1.5 - 2.5 Years
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-bold text-stone-800 mb-6 font-hand">The Cozy Nest</h2>
+                    <p class="text-lg text-stone-600 mb-8 leading-relaxed">
+                        A warm, sensory-rich wonderland where toddlers take their first little steps into socializing.
+                        We focus on comfort, gentle routines, and messy art!
+                    </p>
+
+                    <div class="space-y-6">
+                        <div
+                            class="bg-white p-4 rounded-2xl shadow-sm border border-yellow-100 flex items-start gap-4 hover:shadow-md transition">
+                            <div
+                                class="w-12 h-12 bg-yellow-100 rounded-full flex-shrink-0 flex items-center justify-center text-2xl">
+                                🧸</div>
+                            <div>
+                                <h4 class="font-bold text-stone-700 text-lg">Sensory Play Zones</h4>
+                                <p class="text-stone-500 text-sm">Safe textures and toys to explore touch, sight, and
+                                    sound.</p>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-white p-4 rounded-2xl shadow-sm border border-yellow-100 flex items-start gap-4 hover:shadow-md transition">
+                            <div
+                                class="w-12 h-12 bg-yellow-100 rounded-full flex-shrink-0 flex items-center justify-center text-2xl">
+                                🎵</div>
+                            <div>
+                                <h4 class="font-bold text-stone-700 text-lg">Music & Rhymes</h4>
+                                <p class="text-stone-500 text-sm">Gentle songs and rhythmic movements for early language
+                                    skills.</p>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-white p-4 rounded-2xl shadow-sm border border-yellow-100 flex items-start gap-4 hover:shadow-md transition">
+                            <div
+                                class="w-12 h-12 bg-yellow-100 rounded-full flex-shrink-0 flex items-center justify-center text-2xl">
+                                🤝</div>
+                            <div>
+                                <h4 class="font-bold text-stone-700 text-lg">Social Bonding</h4>
+                                <p class="text-stone-500 text-sm">Learning to share smiles and play side-by-side.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-10">
+                        <a href="classes/play-group.html"
+                            class="inline-block bg-yellow-400 text-stone-900 px-8 py-3 rounded-full font-bold shadow-lg shadow-yellow-200 hover:bg-yellow-300 transition hover:-translate-y-1">
+                            Explore PlayGroup
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Image Visual -->
+                <div class="relative reveal reveal-left order-1 md:order-2">
+                    <div
+                        class="absolute -top-10 -right-10 w-32 h-32 bg-yellow-200 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-pulse">
+                    </div>
+                    <div
+                        class="absolute -bottom-10 -left-10 w-40 h-40 bg-orange-200 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-pulse delay-700">
+                    </div>
+
+                    <div
+                        class="relative z-10 rounded-[40px] overflow-hidden border-8 border-white shadow-2xl rotate-2 hover:rotate-0 transition duration-500">
+                        <img src="assets/hero_playgroup.png"
+                            class="w-full h-[300px] md:h-[500px] object-cover hover:scale-105 transition duration-700">
+
+                        <!-- Floater Badge -->
+                        <div
+                            class="absolute bottom-6 left-6 bg-white/90 backdrop-blur-md px-4 py-2 rounded-2xl shadow-lg border border-white/50 flex items-center gap-2">
+                            <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                            <span class="text-sm font-bold text-stone-600">Enrolling Now</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROGRAM: NURSERY -->
+    <section id="nursery" class="py-16 md:py-24 relative overflow-hidden" style="background-color: #6B3E2E;">
+        <!-- Soft Background Elements -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden">
+            <div
+                class="absolute top-10 left-10 w-64 h-64 bg-green-200 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-float">
+            </div>
+            <div class="absolute bottom-10 right-10 w-80 h-80 bg-cyan-200 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-float"
+                style="animation-delay: 2s"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+
+                <!-- Image Visual (Left for visual balance) -->
+                <div class="relative reveal reveal-right order-1">
+                    <div
+                        class="relative z-10 rounded-[40px] overflow-hidden border-8 border-white shadow-2xl -rotate-2 hover:rotate-0 transition duration-500">
+                        <img src="assets/hero_nursery.png"
+                            class="w-full h-[300px] md:h-[500px] object-cover hover:scale-105 transition duration-700">
+
+                        <!-- Floater Badge -->
+                        <div
+                            class="absolute top-6 left-6 bg-white/90 backdrop-blur-md px-4 py-2 rounded-2xl shadow-lg border border-white/50 flex items-center gap-2">
+                            <div class="text-2xl">🌱</div>
+                            <span class="text-sm font-bold text-stone-600">Curiosity Grows Here</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Content -->
+                <div class="reveal reveal-left order-2">
+                    <div
+                        class="inline-flex items-center gap-2 py-2 px-4 bg-green-100 text-green-800 font-bold rounded-full mb-6 text-sm uppercase tracking-wider shadow-sm">
+                        <span class="text-lg">🌱</span> 2.5 - 3.5 Years
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 font-hand">The Explorer's Garden</h2>
+                    <p class="text-lg text-emerald-50 mb-8 leading-relaxed">
+                        Curiosity takes the lead! Our Nursery program encourages independent thinking, asking questions,
+                        and discovering how the world works through hands-on play.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div
+                            class="bg-white p-4 rounded-2xl shadow-sm border border-green-100 flex items-start gap-4 hover:shadow-md transition">
+                            <div
+                                class="w-12 h-12 bg-green-100 rounded-full flex-shrink-0 flex items-center justify-center text-2xl">
+                                🧩</div>
+                            <div>
+                                <h4 class="font-bold text-stone-800 text-lg">Active Problem Solving</h4>
+                                <p class="text-stone-500 text-sm">Puzzles, building blocks, and games that spark
+                                    "Aha!"
+                                    moments.</p>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-white p-4 rounded-2xl shadow-sm border border-green-100 flex items-start gap-4 hover:shadow-md transition">
+                            <div
+                                class="w-12 h-12 bg-green-100 rounded-full flex-shrink-0 flex items-center justify-center text-2xl">
+                                🗣️</div>
+                            <div>
+                                <h4 class="font-bold text-stone-800 text-lg">Language Explosion</h4>
+                                <p class="text-stone-500 text-sm">Storytelling, vocabulary games, and expressing
+                                    big
+                                    ideas.</p>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-white p-4 rounded-2xl shadow-sm border border-green-100 flex items-start gap-4 hover:shadow-md transition">
+                            <div
+                                class="w-12 h-12 bg-green-100 rounded-full flex-shrink-0 flex items-center justify-center text-2xl">
+                                🎨</div>
+                            <div>
+                                <h4 class="font-bold text-stone-800 text-lg">Creative Expression</h4>
+                                <p class="text-stone-500 text-sm">Painting, role-playing, and creating their own
+                                    little
+                                    masterpieces.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-10">
+                        <a href="classes/nursery.html"
+                            class="inline-block bg-mint-400 text-white px-8 py-3 rounded-full font-bold shadow-lg shadow-green-200 hover:bg-mint-500 transition hover:-translate-y-1"
+                            style="background-color: var(--color-mint-400);">
+                            Discover Nursery
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROGRAM: KINDERGARTEN -->
+    <section id="kindergarten" class="py-16 md:py-24 relative overflow-hidden bg-white">
+        <!-- Soft Background Elements -->
+        <div class="absolute inset-0 z-0">
+            <div
+                class="absolute top-20 right-20 w-[400px] h-[400px] bg-sky-100 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-float">
+            </div>
+            <div class="absolute bottom-20 left-20 w-[400px] h-[400px] bg-indigo-100 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-float"
+                style="animation-delay: 3s"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+                <!-- Text Content -->
+                <div class="reveal reveal-right order-2 md:order-1">
+                    <div
+                        class="inline-flex items-center gap-2 py-2 px-4 bg-sky-100 text-sky-800 font-bold rounded-full mb-6 text-sm uppercase tracking-wider shadow-sm">
+                        <span class="text-lg">🚀</span> 3.5 - 6 Years
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-bold text-stone-800 mb-6 font-hand">The Future Leaders</h2>
+                    <p class="text-lg text-stone-600 mb-8 leading-relaxed">
+                        Ready for the big world! We blend academic preparation with social confidence, ensuring your
+                        child steps into school with a bright smile and a sharp mind.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div
+                            class="bg-white p-4 rounded-2xl shadow-sm border border-sky-100 flex items-start gap-4 hover:shadow-md transition">
+                            <div
+                                class="w-12 h-12 bg-sky-100 rounded-full flex-shrink-0 flex items-center justify-center text-2xl">
+                                📝</div>
+                            <div>
+                                <h4 class="font-bold text-stone-700 text-lg">School Readiness</h4>
+                                <p class="text-stone-500 text-sm">Reading, writing basics, and early math concepts made
+                                    fun.</p>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-white p-4 rounded-2xl shadow-sm border border-sky-100 flex items-start gap-4 hover:shadow-md transition">
+                            <div
+                                class="w-12 h-12 bg-sky-100 rounded-full flex-shrink-0 flex items-center justify-center text-2xl">
+                                🧠</div>
+                            <div>
+                                <h4 class="font-bold text-stone-700 text-lg">Critical Thinking</h4>
+                                <p class="text-stone-500 text-sm">Science experiments, logical puzzles, and "Why?"
+                                    discussions.</p>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-white p-4 rounded-2xl shadow-sm border border-sky-100 flex items-start gap-4 hover:shadow-md transition">
+                            <div
+                                class="w-12 h-12 bg-sky-100 rounded-full flex-shrink-0 flex items-center justify-center text-2xl">
+                                🎤</div>
+                            <div>
+                                <h4 class="font-bold text-stone-700 text-lg">Public Speaking</h4>
+                                <p class="text-stone-500 text-sm">Show-and-tell and group activities to build lifelong
+                                    confidence.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-10">
+                        <a href="classes/kindergarten.html"
+                            class="inline-block bg-sky-400 text-white px-8 py-3 rounded-full font-bold shadow-lg shadow-sky-200 hover:bg-sky-500 transition hover:-translate-y-1"
+                            style="background-color: var(--color-sky-400);">
+                            Explore Kindergarten
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Image Visual -->
+                <div class="relative reveal reveal-left order-1 md:order-2">
+                    <div
+                        class="absolute -top-10 -right-10 w-32 h-32 bg-sky-200 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-pulse">
+                    </div>
+                    <div
+                        class="relative z-10 rounded-[40px] overflow-hidden border-8 border-white shadow-2xl rotate-2 hover:rotate-0 transition duration-500">
+                        <img src="assets/hero_kindergarten.png"
+                            class="w-full h-[500px] object-cover hover:scale-105 transition duration-700">
+
+                        <!-- Floater Badge -->
+                        <div
+                            class="absolute bottom-6 right-6 bg-white/90 backdrop-blur-md px-4 py-2 rounded-2xl shadow-lg border border-white/50 flex items-center gap-2">
+                            <div class="text-2xl">🎓</div>
+                            <span class="text-sm font-bold text-stone-600">Future Ready</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DAY CARE SECTION -->
+    <section class="py-24 relative overflow-hidden" style="background-color: #6B3E2E;">
+        <div class="max-w-6xl mx-auto px-4 text-center relative z-10">
+            <div class="inline-block text-6xl mb-6 reveal reveal-zoom">🌙</div>
+            <h2 class="text-5xl font-bold mb-6 font-hand text-white reveal reveal-up">Home Base Day Care</h2>
+            <p class="text-xl text-emerald-100/90 mb-12 max-w-2xl mx-auto leading-relaxed reveal reveal-up delay-200">
+                Need a safe place after school? Our "Home Base" offers healthy meals, nap corners, and guided play in a
+                loving environment that feels just like home.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                <!-- Card 1 -->
+                <div
+                    class="bg-white p-8 rounded-[30px] shadow-xl hover:-translate-y-2 transition duration-300 border border-white/50 reveal reveal-up delay-200">
+                    <div class="w-14 h-14 bg-rose-100 rounded-full flex items-center justify-center text-3xl mb-6">🍎
+                    </div>
+                    <h3 class="font-bold text-xl mb-3 text-stone-800">Healthy Meals</h3>
+                    <p class="text-stone-500 leading-relaxed">Freshly prepared, balanced meals to refuel growing bodies
+                        after a busy day.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="bg-white p-8 rounded-[30px] shadow-xl hover:-translate-y-2 transition duration-300 border border-white/50 reveal reveal-up delay-400">
+                    <div class="w-14 h-14 bg-indigo-100 rounded-full flex items-center justify-center text-3xl mb-6">💤
+                    </div>
+                    <h3 class="font-bold text-xl mb-3 text-stone-800">Nap & Quiet Zones</h3>
+                    <p class="text-stone-500 leading-relaxed">Cozy, soft corners with blankets and pillows for resting
+                        and recharging.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="bg-white p-8 rounded-[30px] shadow-xl hover:-translate-y-2 transition duration-300 border border-white/50 reveal reveal-up delay-600">
+                    <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center text-3xl mb-6">🎨
+                    </div>
+                    <h3 class="font-bold text-xl mb-3 text-stone-800">Creative Downtime</h3>
+                    <p class="text-stone-500 leading-relaxed">Screen-free fun! Art, reading, and gentle games to unwind.
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-16 reveal reveal-up delay-600">
+                <a href="contact.html"
+                    class="inline-flex items-center gap-2 bg-stone-800 text-white px-10 py-4 rounded-full font-bold shadow-lg hover:bg-stone-700 transition transform hover:scale-105">
+                    <span>Book a Visit</span>
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER: V2 "Enchanted Garden" -->
+    <footer class="bg-emerald-950 text-emerald-100/80 py-16 md:py-24 relative overflow-hidden font-sans">
+        <!-- Grass Top Divider -->
+        <div class="absolute top-0 left-0 w-full overflow-hidden leading-none z-20">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none" class="relative block w-full h-16 fill-white">
+                <path
+                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z">
+                </path>
+            </svg>
+        </div>
+
+        <!-- Fireflies -->
+        <div class="absolute inset-0 z-0 pointer-events-none">
+            <div
+                class="absolute top-1/4 left-1/4 w-1 h-1 bg-yellow-400 rounded-full animate-float opacity-40 shadow-[0_0_10px_rgba(250,204,21,0.8)]">
+            </div>
+            <div
+                class="absolute top-3/4 right-1/3 w-1.5 h-1.5 bg-yellow-400 rounded-full animate-float delay-700 opacity-60 shadow-[0_0_15px_rgba(250,204,21,0.8)]">
+            </div>
+            <div
+                class="absolute top-1/3 right-10 w-2 h-2 bg-yellow-400 rounded-full animate-wiggle delay-1000 opacity-30 shadow-[0_0_20px_rgba(250,204,21,0.8)]">
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 relative z-10 pt-12">
+            <div class="grid md:grid-cols-4 gap-12 mb-16">
+                <!-- Col 1: Brand & Newsletter -->
+                <div class="md:col-span-1 space-y-6">
+                    <a href="index.html" class="flex items-center gap-3 hover:opacity-90 transition inline-block">
+                        <img src="assets/Clever_Kitty_logo_1-removebg-preview.png"
+                            class="h-24 w-auto object-contain bg-white rounded-2xl p-2 shadow-lg">
+                    </a>
+                    <p class="text-sm leading-relaxed text-emerald-200/70">
+                        Nurturing curiosity in our enchanted garden of learning. Where every day is a new discovery.
+                    </p>
+
+                    <!-- Integrated Newsletter -->
+                    <div class="bg-white/5 backdrop-blur-sm p-4 rounded-2xl border border-white/10 mt-6">
+                        <label class="block text-xs font-bold text-amber-300 uppercase tracking-wider mb-2">Join our
+                            Story</label>
+                        <div class="flex gap-2">
+                            <input type="email" placeholder="Email..."
+                                class="bg-white/10 border-none rounded-lg px-3 py-2 text-sm text-white placeholder-emerald-400/50 w-full focus:ring-1 focus:ring-amber-300 outline-none">
+                            <button
+                                class="bg-amber-400 text-emerald-900 rounded-lg p-2 hover:bg-amber-300 transition shadow-lg hover:shadow-amber-400/20">
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Col 2: Programs -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6 flex items-center gap-2"><i data-lucide="sprout"
+                            class="w-4 h-4 text-emerald-400"></i> Programs</h4>
+                    <ul class="space-y-4 text-sm font-medium">
+                        <li><a href="classes/play-group.html"
+                                class="hover:text-amber-300 transition flex items-center gap-2 group"><span
+                                    class="w-1.5 h-1.5 bg-emerald-600 rounded-full group-hover:bg-amber-300 transition"></span>
+                                Play Group</a></li>
+                        <li><a href="classes/nursery.html"
+                                class="hover:text-amber-300 transition flex items-center gap-2 group"><span
+                                    class="w-1.5 h-1.5 bg-emerald-600 rounded-full group-hover:bg-amber-300 transition"></span>
+                                Nursery</a></li>
+                        <li><a href="classes/kindergarten.html"
+                                class="hover:text-amber-300 transition flex items-center gap-2 group"><span
+                                    class="w-1.5 h-1.5 bg-emerald-600 rounded-full group-hover:bg-amber-300 transition"></span>
+                                Kindergarten</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Quick Links -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6 flex items-center gap-2"><i data-lucide="compass"
+                            class="w-4 h-4 text-sky-400"></i> Quick Links</h4>
+                    <ul class="space-y-4 text-sm font-medium">
+                        <li><a href="index.html" class="hover:text-amber-300 transition block">Home</a></li>
+                        <li><a href="about.html" class="hover:text-amber-300 transition block">About</a></li>
+                        <li><a href="about/our-team.html" class="hover:text-amber-300 transition block">Our Team</a>
+                        </li>
+                        <li><a href="about/gallery.html" class="hover:text-amber-300 transition block">Gallery</a></li>
+                        <li><a href="about/blog.html" class="hover:text-amber-300 transition block">Blog</a></li>
+
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contact -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6 flex items-center gap-2"><i data-lucide="map-pin"
+                            class="w-4 h-4 text-rose-400"></i> Visit Us</h4>
+                    <address class="not-italic text-sm space-y-4">
+                        <p class="flex items-start gap-3">
+                            <span class="mt-1">📍</span>
+                            <span>123 Sunshine Lane,<br>Happy Valley, AP - 530003</span>
+                        </p>
+                        <p class="flex items-center gap-3">
+                            <span>📞</span>
+                            <a href="tel:+919876543210" class="font-bold text-amber-300 hover:text-white transition">+91
+                                98765 43210</a>
+                        </p>
+                        <p class="flex items-center gap-3">
+                            <span>💌</span>
+                            <a href="mailto:hello@cleverkitty.com"
+                                class="hover:text-white transition">hello@cleverkitty.com</a>
+                        </p>
+                        <!-- Socials -->
+                        <div class="flex gap-4 mt-6">
+                            <a href="#"
+                                class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-blue-600 transition hover:-translate-y-1"><i
+                                    data-lucide="facebook" class="w-5 h-5"></i></a>
+                            <a href="#"
+                                class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-rose-600 transition hover:-translate-y-1"><i
+                                    data-lucide="instagram" class="w-5 h-5"></i></a>
+                            <a href="#"
+                                class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-red-600 transition hover:-translate-y-1"><i
+                                    data-lucide="youtube" class="w-5 h-5"></i></a>
+                            <a href="#"
+                                class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-sky-500 transition hover:-translate-y-1"><i
+                                    data-lucide="twitter" class="w-5 h-5"></i></a>
+                        </div>
+                    </address>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div
+                class="border-t border-emerald-900 pt-8 text-center text-xs text-emerald-600 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p>&copy; 2024 CleverKitty Play School. Growing with love.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-emerald-400">Privacy Policy</a>
+                    <a href="#" class="hover:text-emerald-400">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Use a safer way to call lucide after ensuring library is defined
+        window.addEventListener('DOMContentLoaded', () => {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            } else {
+                console.error('Lucide could not be loaded.');
+            }
+
+            // Mobile Menu Toggle logic
+            const mobileToggle = document.getElementById('mobile-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileClose = document.getElementById('mobile-close');
+
+            function toggleMenu() {
+                mobileMenu.classList.toggle('hidden');
+                mobileMenu.classList.toggle('flex');
+                document.body.classList.toggle('overflow-hidden');
+            }
+
+            if (mobileToggle) mobileToggle.addEventListener('click', toggleMenu);
+            if (mobileClose) mobileClose.addEventListener('click', toggleMenu);
+
+            // Close menu when clicking any link
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('flex');
+                    document.body.classList.remove('overflow-hidden');
+                });
+            });
+
+            const observerOptions = { threshold: 0.1 };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        });
+
+        // Mobile Submenu Toggle - Global
+        window.toggleMobileSubmenu = function (submenuId) {
+            const submenu = document.getElementById(submenuId);
+            const icon = document.getElementById('icon-' + submenuId);
+
+            if (submenu.classList.contains('hidden')) {
+                submenu.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                submenu.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+    </script>
+</body>
+
+</html>
