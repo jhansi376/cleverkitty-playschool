@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PMK0JBXS10"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-PMK0JBXS10');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daycare - Home Base | CleverKitty Play School</title>
+    <meta name="description"
+        content="Safe, nurturing, and engaging Daycare services in Vizag. CleverKitty provides a home-away-from-home experience for children aged 18 months and above with expert care.">
+    <meta name="keywords"
+        content="daycare vizag, best childcare simhachalam, infant care visakhapatnam, nursery daycare vizag">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cleverkitty.in/classes/daycare.html">
+    <meta property="og:title" content="Daycare - Home Base | CleverKitty Play School">
+    <meta property="og:description"
+        content="A safe and nurturing environment for your child's first steps away from home in Vizag.">
+    <meta property="og:image" content="../assets/Cleverkitty_new_logo-removebg-preview.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://cleverkitty.in/classes/daycare.html">
+    <meta name="twitter:title" content="Daycare - Home Base | CleverKitty Play School">
+    <meta name="twitter:description"
+        content="A safe and nurturing environment for your child's first steps away from home in Vizag.">
+    <meta name="twitter:image" content="../assets/Cleverkitty_new_logo-removebg-preview.png">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        hand: ['Fredoka', 'sans-serif'],
+                        playful: ['Patrick Hand', 'cursive'],
+                    },
+                    colors: {
+                        ck: {
+                            'green-dark': '#448119',
+                            'green-mid': '#7da00b',
+                            'green-leaf': '#8ba90d',
+                            'green-lime': '#99ae07',
+                            'gold-deep': '#eb9e04',
+                            'gold-bright': '#eeb003',
+                            'gold-warm': '#ebad04',
+                            'yellow-sand': '#e9c655',
+                            'yellow-sunny': '#fccd22',
+                            'yellow-pale': '#fbeba9',
+                            'yellow-lemon': '#f1de54',
+                            'white': '#fdfdfd'
+                        },
+                        primary: '#448119',
+                        secondary: '#eb9e04',
+                        accent: '#ff7e1a',
+                        premium: {
+                            'gold': '#FBC02D',
+                            'red': '#e5313e',
+                            'green': '#2E7D32'
+                        }
+                    },
+                    borderRadius: {
+                        '4xl': '2.5rem',
+                        '5xl': '3rem',
+                        '6xl': '4rem',
+                    },
+                    boxShadow: {
+                        'premium': '0 25px 50px -12px rgba(68, 129, 25, 0.25)',
+                        'gold-glow': '0 15px 35px -5px rgba(235, 158, 4, 0.45)',
+                        'accent-glow': '0 15px 35px -5px rgba(255, 126, 26, 0.4)',
+                        'soft': '0 10px 25px -5px rgba(0, 0, 0, 0.05)',
+                        'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.07)',
+                    },
+                    animation: {
+                        'slow-spin': 'spin 12s linear infinite',
+                        'float-delayed': 'float 7s ease-in-out infinite 1s',
+                        'blob': 'blob 7s infinite',
+                    },
+                    keyframes: {
+                        blob: {
+                            "0%": { transform: "translate(0px, 0px) scale(1)" },
+                            "33%": { transform: "translate(30px, -50px) scale(1.1)" },
+                            "66%": { transform: "translate(-20px, 20px) scale(0.9)" },
+                            "100%": { transform: "translate(0px, 0px) scale(1)" },
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Outfit:wght@100..900&family=Patrick+Hand&display=swap"
+        rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        :root {
+            --color-coral: #ffafcc;
+            --color-mint: #bde0fe;
+            --color-sunny: #ffc8dd;
+            --color-leaf: #a2d2ff;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #fdfbf7;
+            scroll-behavior: smooth;
+        }
+
+        .font-hand {
+            font-family: 'Fredoka', sans-serif;
+        }
+
+        .font-playful {
+            font-family: 'Patrick Hand', cursive;
+        }
+
+        .glass-premium {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .glass-dark {
+            background: rgba(15, 15, 15, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .card-premium {
+            background: white;
+            border-radius: 3rem;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .card-premium:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 40px 80px -15px rgba(68, 129, 25, 0.15);
+        }
+
+        .text-gradient-green {
+            background: linear-gradient(135deg, #448119 0%, #7da00b 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #eb9e04 0%, #fccd22 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .sticker {
+            position: absolute;
+            pointer-events: none;
+            z-index: 10;
+            filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.1));
+        }
+
+        @keyframes sway {
+
+            0%,
+            100% {
+                transform: rotate(-8deg) scale(1);
+            }
+
+            50% {
+                transform: rotate(8deg) scale(1.05);
+            }
+        }
+
+        .animate-sway {
+            animation: sway 5s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(2deg);
+            }
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .reveal {
+            opacity: 0;
+            transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
+            will-change: transform, opacity;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translate(0, 0) scale(1);
+        }
+
+        .custom-gradient-green {
+            background: linear-gradient(135deg, #448119 0%, #7da00b 100%);
+        }
+
+        .custom-gradient-gold {
+            background: linear-gradient(135deg, #eb9e04 0%, #eeb003 100%);
+        }
+
+        .reveal-up {
+            transform: translateY(60px);
+        }
+
+        .reveal-down {
+            transform: translateY(-60px);
+        }
+
+        .reveal-left {
+            transform: translateX(-60px);
+        }
+
+        .reveal-right {
+            transform: translateX(60px);
+        }
+
+        .reveal-zoom {
+            transform: scale(0.95);
+        }
+
+        .parallax-target {
+            transition: transform 0.1s ease-out;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #000000;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #333333;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-800 antialiased overflow-x-hidden">
+
+    <!-- NAVIGATION MENU: V24 Floating Pill -->
+    <div class="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
+        <nav
+            class="pointer-events-auto bg-white/95 backdrop-blur-md shadow-premium rounded-full border-2 border-ck-yellow-pale px-3 py-3 w-full max-w-5xl flex items-center justify-between transition-all duration-300 hover:shadow-gold-glow hover:-translate-y-1">
+
+            <!-- 1. Logo (Left) -->
+            <a href="../index.html" class="flex items-center gap-3 pl-4 cursor-pointer group">
+                <img src="../assets/Cleverkitty_new_logo-removebg-preview.png"
+                    class="h-20 w-auto object-contain hover:scale-110 transition drop-shadow-md">
+            </a>
+
+            <!-- 2. Menu Items (Center - Desktop) -->
+            <div class="hidden md:flex items-center gap-1 bg-stone-100/50 p-1.5 rounded-full">
+                <a href="../index.html"
+                    class="px-6 py-2 rounded-full text-sm font-bold text-stone-600 hover:bg-white hover:text-primary hover:shadow-sm transition">Home</a>
+                <div class="relative group">
+                    <a href="../about.html"
+                        class="px-6 py-2 rounded-full text-sm font-bold text-stone-600 hover:bg-white hover:text-primary hover:shadow-sm transition flex items-center gap-1">
+                        About Us
+                    </a>
+                    <!-- Simple Dropdown for About -->
+                    <div
+                        class="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-48 bg-white rounded-2xl shadow-xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all transform origin-top translate-y-2 group-hover:translate-y-0 text-center">
+                        <a href="../about/gallery.html"
+                            class="block w-full py-2 px-4 rounded-xl text-sm font-bold text-stone-600 hover:bg-ck-green-dark/10 hover:text-ck-green-dark transition">Gallery</a>
+                        <a href="../about/blog.html"
+                            class="block w-full py-2 px-4 rounded-xl text-sm font-bold text-stone-600 hover:bg-ck-green-dark/10 hover:text-ck-green-dark transition">Blog</a>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <a href="../classes.html"
+                        class="px-6 py-2 rounded-full text-sm font-bold text-stone-600 hover:bg-white hover:text-primary hover:shadow-sm transition flex items-center gap-1">
+                        Classes
+                    </a>
+                    <!-- Dropdown for Classes -->
+                    <div
+                        class="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-48 bg-white rounded-2xl shadow-xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all transform origin-top translate-y-2 group-hover:translate-y-0 text-center">
+                        <a href="daycare.html"
+                            class="block w-full py-2 px-4 rounded-xl text-sm font-bold text-primary bg-ck-yellow-pale/50 transition">Daycare</a>
+                        <a href="play-group.html"
+                            class="block w-full py-2 px-4 rounded-xl text-sm font-bold text-stone-600 hover:bg-ck-yellow-pale/50 hover:text-primary transition">Playgroup</a>
+                        <a href="nursery.html"
+                            class="block w-full py-2 px-4 rounded-xl text-sm font-bold text-stone-600 hover:bg-ck-yellow-pale/50 hover:text-primary transition">Nursery</a>
+                        <a href="junior-k.g.html"
+                            class="block w-full py-2 px-4 rounded-xl text-sm font-bold text-stone-600 hover:bg-ck-yellow-pale/50 hover:text-primary transition">Junior
+                            KG</a>
+                        <a href="senior-k.g.html"
+                            class="block w-full py-2 px-4 rounded-xl text-sm font-bold text-stone-600 hover:bg-ck-yellow-pale/50 hover:text-primary transition">Senior
+                            KG</a>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!-- 3. Action Button (Right) -->
+            <div class="flex items-center gap-3 pr-1">
+                <a href="../contact.html"
+                    class="hidden sm:flex items-center gap-2 custom-gradient-gold text-white px-6 py-2.5 rounded-full font-bold text-sm shadow-premium hover:shadow-gold-glow hover:-translate-y-0.5 transition transform active:scale-95">
+                    <span>Enroll Now</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+
+                <!-- Mobile Menu Button (Hamburger) -->
+                <button id="mobile-toggle"
+                    class="pointer-events-auto md:hidden w-12 h-12 flex items-center justify-center bg-ck-yellow-pale/50 text-primary rounded-full hover:bg-ck-yellow-pale transition active:scale-90">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="fixed inset-0 z-[60] bg-white/95 backdrop-blur-xl hidden flex-col overflow-y-auto pt-24 pb-10 px-6">
+        <button id="mobile-close"
+            class="absolute top-6 right-6 w-12 h-12 bg-white text-primary rounded-full flex items-center justify-center shadow-lg hover:bg-ck-yellow-pale/20 transition z-50 border border-ck-yellow-pale">
+            <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+
+        <div class="w-full max-w-md mx-auto space-y-4">
+            <a href="../index.html"
+                class="block text-2xl font-bold text-gray-800 hover:text-primary py-2 border-b border-ck-yellow-pale/20">Home</a>
+
+            <!-- Mobile Dropdown: About -->
+            <div class="border-b border-stone-100">
+                <div class="flex items-center justify-between py-2">
+                    <a href="../about.html" class="text-2xl font-bold text-stone-800 hover:text-primary flex-grow">About
+                        Us</a>
+                    <button onclick="toggleMobileSubmenu('mobile-about')" class="p-2 text-stone-800 hover:text-primary">
+                        <i data-lucide="chevron-down" class="w-6 h-6 transition-transform" id="icon-mobile-about"></i>
+                    </button>
+                </div>
+                <div id="mobile-about" class="hidden pl-4 space-y-3 pb-4">
+                    <a href="../about/gallery.html"
+                        class="block text-lg font-medium text-stone-500 hover:text-primary transition">Gallery</a>
+                    <a href="../about/blog.html"
+                        class="block text-lg font-medium text-stone-500 hover:text-primary transition">Blog</a>
+                </div>
+            </div>
+
+            <!-- Mobile Dropdown: Classes -->
+            <div class="border-b border-stone-100">
+                <div class="flex items-center justify-between py-2">
+                    <a href="../classes.html"
+                        class="text-2xl font-bold text-primary hover:text-primary flex-grow">Classes</a>
+                    <button onclick="toggleMobileSubmenu('mobile-classes')" class="p-2 text-primary hover:text-primary">
+                        <i data-lucide="chevron-down" class="w-6 h-6 transition-transform" id="icon-mobile-classes"></i>
+                    </button>
+                </div>
+                <div id="mobile-classes" class="hidden pl-4 space-y-3 pb-4">
+                    <a href="daycare.html" class="block text-lg font-bold text-primary transition">Daycare</a>
+                    <a href="play-group.html"
+                        class="block text-lg font-medium text-stone-500 hover:text-primary transition">Playgroup</a>
+                    <a href="nursery.html"
+                        class="block text-lg font-medium text-stone-500 hover:text-primary transition">Nursery</a>
+                    <a href="junior-k.g.html"
+                        class="block text-lg font-medium text-stone-500 hover:text-primary transition">Junior KG</a>
+                    <a href="senior-k.g.html"
+                        class="block text-lg font-medium text-stone-500 hover:text-primary transition">Senior KG</a>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="mt-8 text-center">
+            <a href="../contact.html"
+                class="inline-block custom-gradient-gold text-white px-10 py-4 rounded-full font-bold text-xl shadow-premium w-full max-w-md">Enroll
+                Now</a>
+        </div>
+    </div>
+
+    <!-- HERO SECTION: THE JOY GARDEN -->
+    <section class="relative min-h-[85vh] flex items-start justify-center overflow-hidden pt-48 pb-20">
+
+        <!-- Full Background Image with Premium Overlay -->
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="../assets/image 2909.png" class="w-full h-full object-cover" alt="Daycare Hero">
+            <!-- Subtle Overlay for contrast (No blur) -->
+            <div class="absolute inset-0 bg-black/20"></div>
+        </div>
+
+        <!-- Animated Blobs Background -->
+        <div
+            class="absolute top-0 -left-4 w-72 h-72 bg-ck-green-mid/20 rounded-full mix-blend-multiply filter blur-3xl animate-blob">
+        </div>
+        <div
+            class="absolute top-0 -right-4 w-72 h-72 bg-ck-gold-bright/20 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000">
+        </div>
+        <div
+            class="absolute -bottom-8 left-20 w-72 h-72 bg-accent/20 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000">
+        </div>
+
+        <!-- 3D Parallax Elements -->
+        <div class="sticker text-6xl top-32 left-10 animate-float opacity-80 z-20" style="transform: translateZ(10px);">
+            🧸</div>
+        <div class="sticker text-7xl top-40 right-10 animate-sway opacity-80 z-20" style="transform: translateZ(20px);">
+            🌙</div>
+        <div class="sticker text-5xl bottom-32 left-1/4 animate-float-delayed opacity-60 z-20"
+            style="transform: translateZ(5px);">🍼</div>
+        <div class="sticker text-8xl bottom-20 right-20 animate-sway opacity-80 z-20"
+            style="transform: translateZ(15px);">💤</div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+
+            <div class="max-w-4xl mx-auto text-center space-y-8 reveal reveal-up">
+                <div class="flex flex-wrap items-center justify-center gap-4">
+                    <nav
+                        class="inline-flex items-center gap-2 bg-[#fccd22] px-6 py-2.5 rounded-full shadow-gold-glow text-sm font-bold text-[#448119] border-2 border-[#e9c655]">
+                        <a href="../index.html" class="hover:text-[#448119]/80 transition">Home</a>
+                        <span class="text-stone-400">/</span>
+                        <a href="../classes.html" class="hover:text-[#448119]/80 transition">Classes</a>
+                        <span class="text-stone-400">/</span>
+                        <span class="text-[#448119] font-bold">Daycare</span>
+                    </nav>
+
+                    <span
+                        class="inline-block text-xl font-hand text-[#448119] tracking-widest uppercase font-bold px-6 py-2 bg-[#fbeba9]/90 rounded-full shadow-sm border-2 border-[#e9c655]">
+                        1 Year Onwards
+                    </span>
+                </div>
+
+                <div class="space-y-4">
+                    <h1 class="text-6xl md:text-9xl font-hand font-bold mb-6 leading-tight drop-shadow-sm">
+                        <span class="text-white">Daycare</span> <br>
+                        <span class="text-[#eb9e04]">Program</span> 🧸
+                    </h1>
+                </div>
+
+                <p
+                    class="text-xl md:text-2xl font-playful text-[#448119] max-w-3xl mx-auto leading-relaxed bg-[#fbeba9]/90 p-6 rounded-3xl shadow-premium border-2 border-[#e9c655]">
+                    At CleverKitty, we provide a safe, caring, and home-like daycare environment for children starting
+                    from
+                    <strong>1 year of age</strong>. Our daycare program is specially designed to support working parents
+                    while
+                    ensuring that every child receives personal care, attention, and comfort throughout the day.
+                </p>
+
+                <div class="flex flex-wrap items-center justify-center gap-6 pt-4">
+                    <a href="../contact.html"
+                        class="px-12 py-6 bg-ck-green-dark text-white rounded-full font-bold text-2xl shadow-premium hover:shadow-gold-glow hover:-translate-y-1 transition active:scale-95 flex items-center gap-3">
+                        Join Our Daycare
+                        <i data-lucide="arrow-right" class="w-7 h-7"></i>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- DAYCARE ESSENTIALS: TIMINGS & CARE -->
+    <section id="growth" class="py-24 bg-white relative overflow-hidden">
+
+        <!-- Decoration -->
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-ck-green-mid/5 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-ck-gold-bright/5 rounded-full blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+
+            <div class="max-w-3xl mx-auto text-center mb-16 reveal reveal-up">
+                <span
+                    class="inline-block px-4 py-1.5 bg-ck-green-dark/10 text-ck-green-dark rounded-full text-sm font-bold tracking-widest uppercase mb-6">
+                    Peace of Mind
+                </span>
+                <h2 class="text-5xl md:text-7xl font-hand font-bold text-gray-900 mb-6">
+                    Daycare <span class="text-gradient-green">Essentials</span> 🕘
+                </h2>
+                <p class="text-xl font-playful text-gray-600">
+                    Structured care timings and personal attention for every child.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-10 mb-16">
+                <!-- Timings -->
+                <div class="rounded-[3rem] p-10 border-2 border-white reveal reveal-left flex flex-col items-center text-center hover:shadow-gold-glow transition duration-500"
+                    style="background-color: #fccd22;">
+                    <div
+                        class="w-20 h-20 bg-white text-ck-gold-deep rounded-full flex items-center justify-center text-4xl mb-6 shadow-sm">
+                        🕘
+                    </div>
+                    <h3 class="text-3xl font-hand font-bold text-ck-green-dark mb-4">Daycare Timings</h3>
+                    <p class="text-2xl text-ck-green-dark font-bold">Monday to Friday</p>
+                    <p class="text-3xl text-ck-green-dark font-black mt-2">9:00 AM to 6:00 PM</p>
+                </div>
+
+                <!-- Age Group -->
+                <div class="rounded-[3rem] p-10 border-2 border-white reveal reveal-right flex flex-col items-center text-center hover:shadow-premium transition duration-500"
+                    style="background-color: #99ae07;">
+                    <div
+                        class="w-20 h-20 bg-white text-ck-green-dark rounded-full flex items-center justify-center text-4xl mb-6 shadow-sm">
+                        👶
+                    </div>
+                    <h3 class="text-3xl font-hand font-bold text-white mb-4">Age Group</h3>
+                    <p class="text-xl text-white font-medium">Daycare admission starts from</p>
+                    <p class="text-3xl text-white font-black mt-2">1 Year Onwards</p>
+                </div>
+            </div>
+
+            <h3 class="text-4xl font-hand font-bold text-center text-gray-900 mb-10 reveal reveal-up">Personal Care &
+                Attention 🍼</h3>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Care 1 -->
+                <div class="group rounded-3xl p-6 shadow-soft hover:shadow-premium hover:-translate-y-2 transition duration-300 border-2 border-white reveal reveal-up delay-100"
+                    style="background-color: #ebad04;">
+                    <div
+                        class="w-12 h-12 bg-white text-ck-green-mid rounded-xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">
+                        🧴
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-2">Hygiene Check</h4>
+                    <p class="text-sm text-white font-medium">Regular diaper checks and changing to keep them
+                        fresh.</p>
+                </div>
+
+                <!-- Care 2 -->
+                <div class="group rounded-3xl p-6 shadow-soft hover:shadow-premium hover:-translate-y-2 transition duration-300 border-2 border-white reveal reveal-up delay-200"
+                    style="background-color: #eb9e04;">
+                    <div
+                        class="w-12 h-12 bg-white text-ck-gold-deep rounded-xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">
+                        🥣
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-2">Timely Feeding</h4>
+                    <p class="text-sm text-white font-medium">Feeding as per parents' schedule and instructions.</p>
+                </div>
+
+                <!-- Care 3 -->
+                <div class="group rounded-3xl p-6 shadow-soft hover:shadow-premium hover:-translate-y-2 transition duration-300 border-2 border-white reveal reveal-up delay-300"
+                    style="background-color: #7da00b;">
+                    <div
+                        class="w-12 h-12 bg-white text-red-500 rounded-xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">
+                        💊
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-2">Medicines</h4>
+                    <p class="text-sm text-white font-medium">Administering prescribed medicines at specified timings.
+                    </p>
+                </div>
+
+                <!-- Care 4 -->
+                <div class="group rounded-3xl p-6 shadow-soft hover:shadow-premium hover:-translate-y-2 transition duration-300 border-2 border-white reveal reveal-up delay-400"
+                    style="background-color: #448119;">
+                    <div
+                        class="w-12 h-12 bg-white text-blue-500 rounded-xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">
+                        👀
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-2">Supervision</h4>
+                    <p class="text-sm text-white font-medium">Continuous supervision by caring and trained
+                        staff.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- DAILY ROUTINE & ENVIRONMENT -->
+    <section class="relative py-32 bg-[#fbeba9] overflow-hidden">
+
+        <!-- Premium Brand Glows -->
+        <div
+            class="absolute -top-40 -left-40 w-[600px] h-[600px] bg-ck-green-dark/10 rounded-full blur-[120px] animate-blob">
+        </div>
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+
+            <div class="text-center mb-20 reveal reveal-up">
+                <span
+                    class="inline-block px-6 py-2 rounded-full text-sm font-bold tracking-widest uppercase text-ck-green-dark bg-white/60 border border-ck-green-dark/10 mb-6 shadow-sm">
+                    Routine & Environment
+                </span>
+                <h2 class="text-5xl md:text-8xl font-hand font-bold text-gray-900 mb-6">
+                    A Day at <span class="text-gradient-green">Daycare</span> 🌈
+                </h2>
+                <p
+                    class="text-xl text-gray-700 max-w-2xl mx-auto font-playful bg-white/30 backdrop-blur-sm p-4 rounded-2xl">
+                    Structured interaction, rest, and play for happy toddlers.
+                </p>
+            </div>
+
+
+            <!-- Safe Environment & Communication -->
+            <div class="mt-20 grid md:grid-cols-2 gap-10">
+                <div class="rounded-3xl p-8 border-2 border-white reveal reveal-up" style="background-color: #eb9e04;">
+                    <h4 class="text-2xl font-bold text-white mb-4">🏡 Safe & Nurturing Environment</h4>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm font-bold text-white">
+                        <li class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-white rounded-full"></div>Hygienic premises
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-white rounded-full"></div>Loving caregivers
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-white rounded-full"></div>Comfortable sleeping
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-white rounded-full"></div>Emotional support
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="rounded-3xl p-8 border-2 border-white reveal reveal-up delay-100"
+                    style="background-color: #448119;">
+                    <h4 class="text-2xl font-bold text-white mb-4">🤝 Parent Communication</h4>
+                    <p class="text-white mb-2 font-medium">We maintain regular updates regarding:</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs font-bold text-white border border-white/20">Feeding
+                            updates</span>
+                        <span
+                            class="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs font-bold text-white border border-white/20">Sleeping
+                            patterns</span>
+                        <span
+                            class="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs font-bold text-white border border-white/20">Diaper
+                            changes</span>
+                        <span
+                            class="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs font-bold text-white border border-white/20">Behavior
+                            &
+                            Mood</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-20 text-center reveal reveal-up">
+                <a href="../contact.html"
+                    class="inline-flex items-center gap-4 px-12 py-6 bg-ck-green-dark text-white rounded-full font-bold text-2xl shadow-premium hover:shadow-gold-glow hover:-translate-y-2 transition duration-500 group">
+                    Enquire Now
+                    <i data-lucide="arrow-right" class="w-8 h-8 group-hover:translate-x-2 transition duration-500"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="-mt-[1px] bg-ck-green-dark text-white pt-16 pb-8 relative overflow-hidden font-sans">
+        <!-- Grass Top Divider (Seamless transition from map) -->
+        <div class="absolute top-0 left-0 w-full overflow-hidden leading-none z-20 -translate-y-[1px]">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none" class="relative block w-full h-12 fill-[#fbeba9]">
+                <path
+                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z">
+                </path>
+            </svg>
+        </div>
+
+
+        <!-- Fireflies Decorations -->
+        <div class="absolute inset-0 z-0 pointer-events-none">
+            <div
+                class="absolute top-1/4 left-1/4 w-1.5 h-1.5 bg-ck-yellow-sunny rounded-full animate-firefly shadow-[0_0_15px_#fccd22]">
+            </div>
+            <div
+                class="absolute top-3/4 right-1/3 w-2 h-2 bg-ck-yellow-sunny rounded-full animate-firefly delay-700 shadow-[0_0_20px_#fccd22]">
+            </div>
+            <div class="absolute top-1/2 right-10 w-1 h-1 bg-white rounded-full animate-pulse opacity-30"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid md:grid-cols-4 gap-12 lg:gap-16 mb-10">
+                <!-- Col 1: Brand -->
+                <div class="flex flex-col items-center md:items-center text-center md:text-center space-y-6">
+                    <a href="../index.html"
+                        class="inline-block bg-white p-4 rounded-[2rem] shadow-premium hover:scale-105 transition duration-500">
+                        <img src="../assets/Cleverkitty_new_logo-removebg-preview.png"
+                            class="h-16 w-auto object-contain" alt="CleverKitty">
+                    </a>
+                    <p class="text-white/80 leading-relaxed font-bold">
+                        Play is our pedagogy.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="https://www.facebook.com/cleverkitty2019" target="_blank"
+                            class="w-12 h-12 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl flex items-center justify-center hover:bg-white hover:text-ck-green-dark hover:border-white transition-all duration-500 hover:-translate-y-2 shadow-2xl">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://www.instagram.com/cleverkitty2019/" target="_blank"
+                            class="w-12 h-12 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl flex items-center justify-center hover:bg-white hover:text-ck-green-dark hover:border-white transition-all duration-500 hover:-translate-y-2 shadow-2xl">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@cleverkittyplayschool4164" target="_blank"
+                            class="w-12 h-12 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl flex items-center justify-center hover:bg-white hover:text-ck-green-dark hover:border-white transition-all duration-500 hover:-translate-y-2 shadow-2xl">
+                            <i data-lucide="youtube" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://x.com/cleverkittyp" target="_blank"
+                            class="w-12 h-12 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl flex items-center justify-center hover:bg-white hover:text-ck-green-dark hover:border-white transition-all duration-500 hover:-translate-y-2 shadow-2xl">
+                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/112421185/" target="_blank"
+                            class="w-12 h-12 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl flex items-center justify-center hover:bg-white hover:text-ck-green-dark hover:border-white transition-all duration-500 hover:-translate-y-2 shadow-2xl">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Programs -->
+                <div class="md:pl-10">
+                    <h4 class="text-2xl font-hand font-bold mb-4 text-ck-yellow-sunny flex items-center gap-2">
+                        <span class="text-ck-gold-bright">✦</span> Programs
+                    </h4>
+                    <ul class="space-y-2 font-bold opacity-80 text-base">
+                        <li><a href="play-group.html"
+                                class="hover:text-ck-yellow-sunny transition flex items-center gap-2 group">
+                                <i data-lucide="check-circle"
+                                    class="w-4 h-4 text-ck-gold-deep group-hover:text-ck-yellow-sunny transition"></i>
+                                PlayGroup</a>
+                        </li>
+                        <li><a href="nursery.html"
+                                class="hover:text-ck-yellow-sunny transition flex items-center gap-2 group">
+                                <i data-lucide="check-circle"
+                                    class="w-4 h-4 text-ck-gold-deep group-hover:text-ck-yellow-sunny transition"></i>
+                                Nursery</a>
+                        </li>
+                        <li><a href="junior-k.g.html"
+                                class="hover:text-ck-yellow-sunny transition flex items-center gap-2 group">
+                                <i data-lucide="check-circle"
+                                    class="w-4 h-4 text-ck-gold-deep group-hover:text-ck-yellow-sunny transition"></i>
+                                Junior KG</a>
+                        </li>
+                        <li><a href="senior-k.g.html"
+                                class="hover:text-ck-yellow-sunny transition flex items-center gap-2 group">
+                                <i data-lucide="check-circle"
+                                    class="w-4 h-4 text-ck-gold-deep group-hover:text-ck-yellow-sunny transition"></i>
+                                Senior KG</a>
+                        </li>
+                        <li><a href="daycare.html"
+                                class="hover:text-ck-yellow-sunny transition flex items-center gap-2 group">
+                                <i data-lucide="check-circle"
+                                    class="w-4 h-4 text-ck-gold-deep group-hover:text-ck-yellow-sunny transition"></i>
+                                Daycare</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Quick Links -->
+                <div>
+                    <h4 class="text-2xl font-hand font-bold mb-4 text-ck-yellow-sunny flex items-center gap-2">
+                        <span class="text-ck-gold-bright">✦</span> Quick Links
+                    </h4>
+                    <ul class="space-y-2 font-bold opacity-80 text-base">
+                        <li><a href="../index.html"
+                                class="hover:text-ck-yellow-sunny transition flex items-center gap-2 group">
+                                <i data-lucide="check-circle"
+                                    class="w-4 h-4 text-ck-gold-deep group-hover:text-ck-yellow-sunny transition"></i>
+                                Home</a></li>
+                        <li><a href="../about.html"
+                                class="hover:text-ck-yellow-sunny transition flex items-center gap-2 group">
+                                <i data-lucide="check-circle"
+                                    class="w-4 h-4 text-ck-gold-deep group-hover:text-ck-yellow-sunny transition"></i>
+                                About Us</a></li>
+                        <li><a href="../classes.html"
+                                class="hover:text-ck-yellow-sunny transition flex items-center gap-2 group">
+                                <i data-lucide="check-circle"
+                                    class="w-4 h-4 text-ck-gold-deep group-hover:text-ck-yellow-sunny transition"></i>
+                                Classes</a></li>
+                        <li><a href="../contact.html"
+                                class="hover:text-ck-yellow-sunny transition flex items-center gap-2 group">
+                                <i data-lucide="check-circle"
+                                    class="w-4 h-4 text-ck-gold-deep group-hover:text-ck-yellow-sunny transition"></i>
+                                Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Visit Us (Enhanced Icons) -->
+                <div>
+                    <h4 class="text-2xl font-hand font-bold mb-4 text-ck-yellow-sunny flex items-center gap-2">
+                        <span class="text-ck-gold-bright">✦</span> Visit Us
+                    </h4>
+                    <address class="not-italic space-y-3">
+                        <div class="flex items-center gap-4 group">
+                            <div
+                                class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-ck-yellow-sunny/20 transition">
+                                <i data-lucide="map-pin" class="w-5 h-5 text-ck-yellow-sunny"></i>
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <span class="text-white/80 font-bold text-base leading-relaxed">
+                                    Simhachalam Rd, Srinivas Nagar, Prahaladapuram.
+                                </span>
+                                <span class="text-white/80 font-bold text-base leading-relaxed">
+                                    Near Prasanthi Nagar, Pendurthi.
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 group">
+                            <div
+                                class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-ck-yellow-sunny/20 transition">
+                                <i data-lucide="phone" class="w-5 h-5 text-ck-yellow-sunny"></i>
+                            </div>
+                            <a href="tel:+919652036036"
+                                class="text-white/80 font-black text-base hover:text-white transition">
+                                +91 96520 36036
+                            </a>
+                        </div>
+                        <div class="flex items-center gap-4 group">
+                            <div
+                                class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-ck-yellow-sunny/20 transition">
+                                <i data-lucide="mail" class="w-5 h-5 text-ck-yellow-sunny"></i>
+                            </div>
+                            <a href="mailto:cleverkitty@gmail.com"
+                                class="text-white/80 font-black text-base hover:text-white transition">
+                                cleverkittyp@gmail.com
+                            </a>
+                        </div>
+                    </address>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-white/10 pt-8 text-center text-xs md:text-sm font-black tracking-widest uppercase text-white flex flex-col md:flex-row justify-between items-center gap-4">
+                <p>© 2026 CleverKitty Daycare & Play School</p>
+                <div class="flex gap-8">
+                    <a href="../index.html" class="hover:text-ck-yellow-sunny transition">Privacy Policy</a>
+                    <a href="../index.html" class="hover:text-ck-yellow-sunny transition">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Use Intersection Observer for scroll animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        // Optional: Stop observing once revealed
+                        // observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Initialize Lucide Icons
+            lucide.createIcons();
+
+            // Mobile Menu Toggle
+            const mobileToggle = document.getElementById('mobile-toggle');
+            const mobileClose = document.getElementById('mobile-close');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            function toggleMenu() {
+                const isHidden = mobileMenu.classList.contains('hidden');
+                if (isHidden) {
+                    mobileMenu.classList.remove('hidden');
+                    mobileMenu.classList.add('flex');
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('flex');
+                    document.body.style.overflow = '';
+                }
+            }
+
+            if (mobileToggle) mobileToggle.addEventListener('click', toggleMenu);
+            if (mobileClose) mobileClose.addEventListener('click', toggleMenu);
+
+            // Close menu when clicking links
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('flex');
+                    document.body.style.overflow = '';
+                });
+            });
+
+            // Mobile Submenu Toggles
+            window.toggleMobileSubmenu = function (id) {
+                const submenu = document.getElementById(id);
+                const icon = document.getElementById('icon-' + id);
+                if (submenu.classList.contains('hidden')) {
+                    submenu.classList.remove('hidden');
+                    icon.style.transform = 'rotate(180deg)';
+                } else {
+                    submenu.classList.add('hidden');
+                    icon.style.transform = 'rotate(0deg)';
+                }
+            };
+        });
+
+        // Parallax Effect for Sticker Elements on Mouse Move
+        document.addEventListener('mousemove', (e) => {
+            const stickers = document.querySelectorAll('.sticker');
+            const x = (window.innerWidth - e.pageX * 2) / 100;
+            const y = (window.innerHeight - e.pageY * 2) / 100;
+
+            stickers.forEach(sticker => {
+                const speed = sticker.getAttribute('data-speed') || 2;
+                sticker.style.transform = `translateX(${x * speed}px) translateY(${y * speed}px)`;
+            });
+        });
+    </script>
+</body>
+
+</html>

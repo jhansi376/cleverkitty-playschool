@@ -1,0 +1,1322 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="overflow-x-hidden">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PMK0JBXS10"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-PMK0JBXS10');
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CleverKitty Premium Play School - Where Little Minds Grow Big</title>
+    <meta name="description"
+        content="Welcome to CleverKitty Premium Play School in Vizag. We offer expert Daycare, PlayGroup, Nursery, and Kindergarten programs with a focus on joyful, activity-based learning and ICSE curriculum.">
+    <meta name="keywords"
+        content="play school in vizag, daycare in simhachalam, best preschool visakhapatnam, cleverkitty play school, nursery school vizag, kindergarten vizag, icse preschool vizag">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cleverkitty.in/">
+    <meta property="og:title" content="CleverKitty Premium Play School - Where Little Minds Grow Big">
+    <meta property="og:description"
+        content="Expert Daycare, PlayGroup, Nursery, and Kindergarten programs in Vizag. Play is our pedagogy!">
+    <meta property="og:image" content="assets/Cleverkitty_new_logo-removebg-preview.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://cleverkitty.in/">
+    <meta name="twitter:title" content="CleverKitty Premium Play School - Where Little Minds Grow Big">
+    <meta name="twitter:description"
+        content="Expert Daycare, PlayGroup, Nursery, and Kindergarten programs in Vizag. Play is our pedagogy!">
+    <meta name="twitter:image" content="assets/Cleverkitty_new_logo-removebg-preview.png">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        hand: ['Fredoka', 'sans-serif'],
+                    },
+                    colors: {
+                        ck: {
+                            'green-dark': '#448119',
+                            'green-mid': '#7da00b',
+                            'green-leaf': '#8ba90d',
+                            'green-lime': '#99ae07',
+                            'gold-deep': '#eb9e04',
+                            'gold-bright': '#eeb003',
+                            'gold-warm': '#ebad04',
+                            'yellow-sand': '#e9c655',
+                            'yellow-sunny': '#fccd22',
+                            'yellow-pale': '#fbeba9',
+                            'yellow-lemon': '#f1de54',
+                            'white': '#fdfdfd'
+                        },
+                        primary: '#448119',
+                        secondary: '#eb9e04',
+                    },
+                    borderRadius: {
+                        '4xl': '2.5rem',
+                        '5xl': '3rem',
+                    },
+                    boxShadow: {
+                        'premium': '0 25px 50px -12px rgba(68, 129, 25, 0.25)',
+                        'gold-glow': '0 15px 35px -5px rgba(235, 158, 4, 0.45)',
+                        'soft': '0 10px 30px -5px rgba(0, 0, 0, 0.05)',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #fbeba9;
+            color: #448119;
+        }
+
+        .text-hand {
+            font-family: 'Fredoka', sans-serif;
+        }
+
+        .blob-shape {
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+
+        /* Scroll Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transition: all 1s ease-out;
+        }
+
+        .reveal.from-bottom {
+            transform: translateY(50px);
+        }
+
+        .reveal.from-top {
+            transform: translateY(-50px);
+        }
+
+        .reveal.from-left {
+            transform: translateX(-100px);
+        }
+
+        .reveal.from-right {
+            transform: translateX(100px);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
+
+        /* Initial Nav Animation */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-down {
+            animation: fadeInDown 0.8s ease-out forwards;
+        }
+
+        /* Text Entrance */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .custom-gradient-green {
+            background: linear-gradient(135deg, #448119 0%, #7da00b 100%);
+        }
+
+        .custom-gradient-gold {
+            background: linear-gradient(135deg, #eb9e04 0%, #eeb003 100%);
+        }
+
+        .delay-200 {
+            animation-delay: 0.2s;
+            transition-delay: 0.2s;
+        }
+
+        .delay-400 {
+            animation-delay: 0.4s;
+            transition-delay: 0.4s;
+        }
+
+        .animate-spin-slow {
+            animation: spin 8s linear infinite;
+        }
+
+        .animate-sway {
+            animation: sway 3s ease-in-out infinite;
+        }
+
+        @keyframes sway {
+
+            0%,
+            100% {
+                transform: rotate(-5deg);
+            }
+
+            50% {
+                transform: rotate(5deg);
+            }
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.4s ease-out forwards;
+        }
+
+        /* Swiper Custom Styles */
+        .swiper-pagination-bullet {
+            background: #eb9e04 !important;
+            opacity: 0.3;
+        }
+
+        .swiper-pagination-bullet-active {
+            opacity: 1;
+            width: 24px !important;
+            border-radius: 5px !important;
+        }
+
+        .swiper-button-next:after,
+        .swiper-button-prev:after {
+            font-size: 1.5rem !important;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body class="text-slate-700 antialiased selection:bg-purple-200 selection:text-purple-900 overflow-x-hidden">
+
+    <div class="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
+        <nav
+            class="pointer-events-auto bg-white/95 backdrop-blur-md shadow-premium rounded-full border-2 border-stone-100 px-3 py-3 w-full max-w-5xl flex items-center justify-between transition-all duration-300 hover:shadow-gold-glow hover:-translate-y-1">
+
+            <!-- 1. Logo (Left) -->
+            <a href="index.html" class="flex items-center gap-3 pl-4 cursor-pointer group">
+                <img src="assets/Cleverkitty_new_logo-removebg-preview.png"
+                    class="h-20 w-auto object-contain hover:scale-110 transition drop-shadow-md">
+            </a>
+
+            <div class="hidden md:flex items-center gap-1 bg-stone-100/50 p-1.5 rounded-full">
+                <a href="index.html"
+                    class="px-6 py-2 rounded-full text-sm font-bold text-primary bg-white shadow-sm transition">Home</a>
+                <div class="relative group">
+                    <a href="about.html"
+                        class="px-6 py-2 rounded-full text-sm font-bold text-stone-600 hover:bg-white hover:text-primary hover:shadow-sm transition flex items-center gap-1">
+                        About Us
+                    </a>
+                    <!-- Simple Dropdown for About -->
+                    <div
+                        class="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-48 bg-white rounded-2xl shadow-xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all transform origin-top translate-y-2 group-hover:translate-y-0 text-center">
+                        <a href="about/gallery.html"
+                            class="block w-full py-2 px-4 rounded-xl text-sm font-bold text-stone-600 hover:bg-ck-green-dark/10 hover:text-ck-green-dark transition">Gallery</a>
+                        <a href="about/blog.html"
+                            class="block w-full py-2 px-4 rounded-xl text-sm font-bold text-stone-600 hover:bg-ck-green-dark/10 hover:text-ck-green-dark transition">Blog</a>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <a href="classes.html"
+                        class="px-6 py-2 rounded-full text-sm font-bold text-stone-600 hover:bg-white hover:text-primary hover:shadow-sm transition flex items-center gap-1">
+                        Classes
+                    </a>
+                    <!-- Dropdown for Classes -->
+                    <div
+                        class="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-48 bg-white rounded-2xl shadow-xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all transform origin-top translate-y-2 group-hover:translate-y-0 text-center">
+                        <a href="classes/daycare.html"
+                            class="block w-full py-2 px-4 rounded-xl text-sm font-bold text-stone-600 hover:bg-ck-green-dark/10 hover:text-ck-green-dark transition">Daycare</a>
+                        <a href="classes/play-group.html"
+                            class="block w-full py-2 px-4 rounded-xl text-sm font-bold text-stone-600 hover:bg-ck-green-dark/10 hover:text-ck-green-dark transition">Playgroup</a>
+                        <a href="classes/nursery.html"
+                            class="block w-full py-2 px-4 rounded-xl text-sm font-bold text-stone-600 hover:bg-ck-green-dark/10 hover:text-ck-green-dark transition">Nursery</a>
+                        <a href="classes/junior-k.g.html"
+                            class="block w-full py-2 px-4 rounded-xl text-sm font-bold text-stone-600 hover:bg-ck-green-dark/10 hover:text-ck-green-dark transition">Junior
+                            KG</a>
+                        <a href="classes/senior-k.g.html"
+                            class="block w-full py-2 px-4 rounded-xl text-sm font-bold text-stone-600 hover:bg-ck-green-dark/10 hover:text-ck-green-dark transition">Senior
+                            KG</a>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="flex items-center gap-3 pr-1">
+                <a href="contact.html"
+                    class="hidden sm:flex items-center gap-2 custom-gradient-gold text-white px-6 py-2.5 rounded-full font-bold text-sm shadow-premium hover:shadow-gold-glow hover:-translate-y-0.5 transition transform active:scale-95">
+                    <span>Enroll Now</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+
+                <!-- Mobile Toggle -->
+                <button id="mobile-toggle"
+                    class="md:hidden w-10 h-10 bg-stone-100 rounded-full flex items-center justify-center text-stone-600">
+                    <i data-lucide="menu" class="w-5 h-5"></i>
+                </button>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="fixed inset-0 z-[70] bg-white/95 backdrop-blur-xl hidden flex-col overflow-y-auto animate-fade-in pt-24 pb-10 px-6">
+        <button id="mobile-close"
+            class="absolute top-6 right-6 w-12 h-12 bg-red-100 text-red-500 rounded-full flex items-center justify-center shadow-lg hover:bg-red-200 hover:scale-110 transition z-50">
+            <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+
+        <div class="w-full max-w-md mx-auto space-y-4">
+            <a href="index.html" class="block text-2xl font-bold text-primary py-2 border-b border-stone-100">Home</a>
+
+            <!-- Mobile Dropdown: About -->
+            <div class="border-b border-stone-100">
+                <div class="flex items-center justify-between py-2">
+                    <a href="about.html" class="text-2xl font-bold text-stone-800 hover:text-primary flex-grow">About
+                        Us</a>
+                    <button onclick="toggleMobileSubmenu('mobile-about')" class="p-2 text-stone-800 hover:text-primary">
+                        <i data-lucide="chevron-down" class="w-6 h-6 transition-transform" id="icon-mobile-about"></i>
+                    </button>
+                </div>
+                <div id="mobile-about" class="hidden pl-4 space-y-3 pb-4">
+                    <a href="about/gallery.html"
+                        class="block text-lg font-medium text-stone-500 hover:text-primary transition">Gallery</a>
+                    <a href="about/blog.html"
+                        class="block text-lg font-medium text-stone-500 hover:text-primary transition">Blog</a>
+                </div>
+            </div>
+
+            <!-- Mobile Dropdown: Classes -->
+            <div class="border-b border-stone-100">
+                <div class="flex items-center justify-between py-2">
+                    <a href="classes.html"
+                        class="text-2xl font-bold text-stone-800 hover:text-primary flex-grow">Classes</a>
+                    <button onclick="toggleMobileSubmenu('mobile-classes')"
+                        class="p-2 text-stone-800 hover:text-primary">
+                        <i data-lucide="chevron-down" class="w-6 h-6 transition-transform" id="icon-mobile-classes"></i>
+                    </button>
+                </div>
+                <div id="mobile-classes" class="hidden pl-4 space-y-3 pb-4">
+                    <a href="classes/daycare.html"
+                        class="block text-lg font-medium text-stone-500 hover:text-primary transition">Daycare</a>
+                    <a href="classes/play-group.html"
+                        class="block text-lg font-medium text-stone-500 hover:text-primary transition">Playgroup</a>
+                    <a href="classes/nursery.html"
+                        class="block text-lg font-medium text-stone-500 hover:text-primary transition">Nursery</a>
+                    <a href="classes/junior-k.g.html"
+                        class="block text-lg font-medium text-stone-500 hover:text-primary transition">Junior KG</a>
+                    <a href="classes/senior-k.g.html"
+                        class="block text-lg font-medium text-stone-500 hover:text-primary transition">Senior KG</a>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="mt-8 text-center px-4">
+            <a href="contact.html"
+                class="w-full custom-gradient-gold text-white py-5 rounded-3xl font-bold text-center text-xl shadow-lg mt-auto">Enroll
+                Now</a>
+        </div>
+    </div>
+
+    <!-- HERO SECTION (Forced Full Stretch Layout) -->
+    <section id="home" class="relative w-full h-[100dvh] overflow-hidden bg-ck-yellow-pale">
+        <div class="absolute inset-0 w-full h-full">
+            <img src="assets/_cleverkitty website landing page banner (3).png" class="w-full h-full object-fill block"
+                alt="CleverKitty Banner">
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US (White Section) -->
+    <section class="py-24 px-4 relative z-20 bg-white">
+
+        <div class="max-w-7xl mx-auto">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-ck-green-dark mb-4">
+                    Why Choose <span class="font-hand text-ck-gold-deep text-5xl md:text-6xl">CleverKitty?</span>
+                </h2>
+                <div class="w-24 h-1.5 bg-ck-gold-bright mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Cards Grid - 3 columns -->
+            <div
+                class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 max-w-7xl mx-auto mb-20 relative z-10 place-items-center">
+                <!-- Card 1 -->
+                <div
+                    class="bg-white rounded-[3rem] p-10 shadow-premium hover:shadow-gold-glow transition duration-500 hover:-translate-y-3 group border-b-8 border-ck-green-dark reveal h-full w-full max-w-sm">
+                    <div
+                        class="w-20 h-20 bg-ck-yellow-pale/50 rounded-3xl flex items-center justify-center text-ck-green-dark mb-8 group-hover:scale-110 group-hover:rotate-6 transition shadow-soft">
+                        <i data-lucide="shield-check" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="font-bold text-ck-green-dark text-2xl mb-4">Safe Environment</h3>
+                    <p class="text-slate-600 leading-relaxed text-lg">CCTV monitored, child-proof interiors, and 24/7
+                        security for complete peace of mind.
+                    </p>
+                </div>
+                <!-- Card 2 -->
+                <div
+                    class="bg-white rounded-[3rem] p-10 shadow-premium hover:shadow-gold-glow transition duration-500 hover:-translate-y-3 group border-b-8 border-ck-gold-deep reveal h-full w-full max-w-sm">
+                    <div
+                        class="w-20 h-20 bg-ck-green-lime/20 rounded-3xl flex items-center justify-center text-ck-green-leaf mb-8 group-hover:scale-110 group-hover:rotate-6 transition shadow-soft">
+                        <i data-lucide="graduation-cap" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="font-bold text-ck-green-dark text-2xl mb-4">Expert Teachers</h3>
+                    <p class="text-slate-600 leading-relaxed text-lg">Highly trained, passionate educators dedicated to
+                        your child's growth and development.
+                    </p>
+                </div>
+                <!-- Card 3 -->
+                <div
+                    class="bg-white rounded-[3rem] p-10 shadow-premium hover:shadow-gold-glow transition duration-500 hover:-translate-y-3 group border-b-8 border-ck-green-lime reveal h-full w-full max-w-sm">
+                    <div
+                        class="w-20 h-20 bg-ck-yellow-sunny/20 rounded-3xl flex items-center justify-center text-ck-gold-deep mb-8 group-hover:scale-110 group-hover:rotate-6 transition shadow-soft">
+                        <i data-lucide="sprout" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="font-bold text-ck-green-dark text-2xl mb-4">Holistic Growth</h3>
+                    <p class="text-slate-600 leading-relaxed text-lg">Nurturing emotional, social, physical, and
+                        cognitive development through play-based learning.
+                    </p>
+                </div>
+            </div>
+            <!-- Decoration -->
+            <div class="absolute right-0 top-1/2 -translate-y-1/2 opacity-20 hidden md:block">
+                <span class="text-9xl">🌿</span>
+            </div>
+            <div class="absolute bottom-10 left-10 text-6xl animate-sway opacity-80">🌷</div>
+            <div class="absolute bottom-10 right-20 text-5xl animate-float opacity-80" style="animation-duration: 4s">🐛
+            </div>
+            <div class="absolute top-10 left-10 text-5xl animate-float opacity-20">🛸</div>
+            <div class="absolute bottom-20 left-1/2 text-5xl animate-sway opacity-60">🍄</div>
+            <div class="absolute top-1/2 right-10 text-4xl animate-float opacity-70" style="animation-duration: 2s">🐝
+            </div>
+        </div>
+    </section>
+
+    <!-- MONTESSORI APPROACH (Green Palette) -->
+    <section id="approach" class="py-24 relative overflow-hidden bg-ck-green-dark">
+        <!-- Decoration: Hanging Elements -->
+        <div class="absolute top-0 left-20 text-6xl animate-bounce" style="animation-duration: 3s">🌱</div>
+        <div class="absolute bottom-10 left-1/3 text-6xl animate-pulse opacity-40">📚</div>
+        <div class="absolute bottom-20 right-10 text-6xl animate-spin-slow opacity-40">🧩</div>
+        <div class="absolute top-20 right-20 text-5xl animate-sway opacity-30">✏️</div>
+        <div class="absolute bottom-5 right-1/4 text-5xl rotate-45 opacity-30">📐</div>
+        <div class="absolute top-1/2 right-1/4 text-5xl animate-bounce opacity-40" style="animation-delay: 1.5s">🎒
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Visuals -->
+                <div class="relative reveal from-left">
+                    <div class="absolute inset-0 bg-white rounded-full mix-blend-overlay filter blur-xl opacity-20">
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Montessori Learning"
+                        class="blob-shape shadow-2xl border-8 border-white/20 w-full object-cover h-[500px] relative z-10">
+
+                    <!-- Badge -->
+                    <div
+                        class="absolute bottom-10 right-0 bg-white p-6 rounded-full shadow-gold-glow flex flex-col items-center justify-center w-32 h-32 z-20 animate-float border-4 border-ck-yellow-pale">
+                        <span class="text-4xl font-bold text-ck-gold-deep">10:1</span>
+                        <span class="text-xs font-bold text-ck-green-dark uppercase">Ratio</span>
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div class="space-y-8 reveal from-right">
+                    <span class="text-ck-yellow-sunny font-bold tracking-widest uppercase text-sm">Our Philosophy</span>
+                    <h2 class="text-4xl lg:text-5xl font-bold text-white uppercase italic tracking-tighter">Our Teaching
+                        <br> <span class="text-hand text-ck-yellow-sunny normal-case not-italic">Philosophy</span>
+                    </h2>
+                    <p class="text-lg text-stone-100/90 leading-relaxed font-medium">
+                        We believe children learn best when they are engaged, active, and enjoying the learning process.
+                        Our activity-based approach creates a joyful environment where every child can shine.
+                    </p>
+                    <ul class="space-y-4">
+                        <li
+                            class="flex items-center gap-4 bg-white/10 backdrop-blur-sm p-4 rounded-2xl border border-white/10 group hover:bg-white/20 transition">
+                            <div class="bg-white p-2 rounded-lg text-ck-gold-deep group-hover:scale-110 transition">
+                                <i data-lucide="check" class="w-5 h-5"></i>
+                            </div>
+                            <span class="font-bold text-white">Communication Skills</span>
+                        </li>
+                        <li
+                            class="flex items-center gap-4 bg-white/10 backdrop-blur-sm p-4 rounded-2xl border border-white/10 group hover:bg-white/20 transition">
+                            <div class="bg-white p-2 rounded-lg text-ck-gold-deep group-hover:scale-110 transition">
+                                <i data-lucide="check" class="w-5 h-5"></i>
+                            </div>
+                            <span class="font-bold text-white">Confidence Building</span>
+                        </li>
+                        <li
+                            class="flex items-center gap-4 bg-white/10 backdrop-blur-sm p-4 rounded-2xl border border-white/10 group hover:bg-white/20 transition">
+                            <div class="bg-white p-2 rounded-lg text-ck-gold-deep group-hover:scale-110 transition">
+                                <i data-lucide="check" class="w-5 h-5"></i>
+                            </div>
+                            <span class="font-bold text-white">Creative Thinking</span>
+                        </li>
+                        <li
+                            class="flex items-center gap-4 bg-white/10 backdrop-blur-sm p-4 rounded-2xl border border-white/10 group hover:bg-white/20 transition">
+                            <div class="bg-white p-2 rounded-lg text-ck-gold-deep group-hover:scale-110 transition">
+                                <i data-lucide="check" class="w-5 h-5"></i>
+                            </div>
+                            <span class="font-bold text-white">Social Interaction</span>
+                        </li>
+                    </ul>
+                    <div class="mt-8 reveal from-bottom">
+                        <a href="about.html"
+                            class="px-8 py-3 custom-gradient-gold text-white rounded-full font-bold shadow-premium hover:scale-105 transition inline-flex items-center gap-2 transform active:scale-95">
+                            <span>Learn More About Us</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROGRAMS (High-End Cards) -->
+    <section id="programs" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal from-top">
+                <span class="text-ck-green-leaf font-bold tracking-widest uppercase text-sm">Premium Care</span>
+                <h2 class="text-4xl lg:text-5xl font-bold text-ck-green-dark mt-2">Programs for <span
+                        class="text-hand text-ck-green-mid">Every Stage</span></h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Program 1 (Gold Bright) -->
+                <div
+                    class="bg-ck-gold-bright rounded-[2.5rem] p-8 hover:-translate-y-2 transition duration-500 group shadow-lg hover:shadow-gold-glow reveal from-bottom delay-400">
+                    <div
+                        class="w-16 h-16 bg-white rounded-full flex items-center justify-center text-ck-gold-bright mb-6 shadow-sm group-hover:scale-110 transition">
+                        <i data-lucide="sun" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Daycare</h3>
+                    <p class="text-white/80 font-bold text-sm mb-4">18 Months</p>
+                    <p class="text-white/90 mb-8 text-sm leading-relaxed">A home away from home with engaging
+                        activities and care.</p>
+                    <a href="classes/daycare.html"
+                        class="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-white text-ck-gold-bright font-bold text-sm shadow-sm hover:bg-stone-50 hover:scale-105 transition transform active:scale-95">
+                        Learn More
+                    </a>
+                </div>
+
+                <!-- Program 2 (Green Dark) -->
+                <div
+                    class="bg-ck-green-dark rounded-[2.5rem] p-8 hover:-translate-y-2 transition duration-500 group shadow-lg hover:shadow-premium reveal from-bottom">
+                    <div
+                        class="w-16 h-16 bg-white rounded-full flex items-center justify-center text-ck-green-dark mb-6 shadow-sm group-hover:scale-110 transition">
+                        <i data-lucide="baby" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Playgroup</h3>
+                    <p class="text-white/80 font-bold text-sm mb-4">2.5 - 3.5 Years</p>
+                    <p class="text-white/90 mb-8 text-sm leading-relaxed">Joyful first steps into social interaction
+                        and sensory play.</p>
+                    <a href="classes/play-group.html"
+                        class="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-white text-ck-green-dark font-bold text-sm shadow-sm hover:bg-stone-50 hover:scale-105 transition transform active:scale-95">
+                        Learn More
+                    </a>
+                </div>
+
+                <!-- Program 3 (Gold Deep) -->
+                <div
+                    class="bg-ck-gold-deep rounded-[2.5rem] p-8 hover:-translate-y-2 transition duration-500 group shadow-lg hover:shadow-premium reveal from-bottom delay-200">
+                    <div
+                        class="w-16 h-16 bg-white rounded-full flex items-center justify-center text-ck-green-leaf mb-6 shadow-sm group-hover:scale-110 transition">
+                        <i data-lucide="blocks" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Nursery</h3>
+                    <p class="text-white/80 font-bold text-sm mb-4">3+ Years</p>
+                    <p class="text-white/90 mb-8 text-sm leading-relaxed">Developing language, numeracy, and motor
+                        skills through fun.</p>
+                    <a href="classes/nursery.html"
+                        class="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-white text-ck-green-leaf font-bold text-sm shadow-sm hover:bg-stone-50 hover:scale-105 transition transform active:scale-95">
+                        Learn More
+                    </a>
+                </div>
+
+                <!-- Program 4 (Green Leaf - Junior KG) -->
+                <div
+                    class="bg-ck-green-leaf rounded-[2.5rem] p-8 hover:-translate-y-2 transition duration-500 group shadow-lg hover:shadow-gold-glow reveal from-bottom delay-400">
+                    <div
+                        class="w-16 h-16 bg-white rounded-full flex items-center justify-center text-ck-gold-deep mb-6 shadow-sm group-hover:scale-110 transition">
+                        <i data-lucide="book-open" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Junior KG</h3>
+                    <p class="text-white/80 font-bold text-sm mb-4">4+ Years</p>
+                    <p class="text-white/90 mb-8 text-sm leading-relaxed">Building strong foundations in literacy,
+                        numeracy, and social skills through play.</p>
+                    <a href="classes/junior-k.g.html"
+                        class="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-white text-ck-gold-deep font-bold text-sm shadow-sm hover:bg-stone-50 hover:scale-105 transition transform active:scale-95">
+                        Learn More
+                    </a>
+                </div>
+
+                <!-- Program 5 (Gold Bright - Senior KG) -->
+                <div
+                    class="bg-ck-gold-bright rounded-[2.5rem] p-8 hover:-translate-y-2 transition duration-500 group shadow-lg hover:shadow-premium reveal from-bottom delay-500">
+                    <div
+                        class="w-16 h-16 bg-white rounded-full flex items-center justify-center text-ck-gold-bright mb-6 shadow-sm group-hover:scale-110 transition">
+                        <i data-lucide="graduation-cap" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Senior KG</h3>
+                    <p class="text-white/80 font-bold text-sm mb-4">5+ Years</p>
+                    <p class="text-white/90 mb-8 text-sm leading-relaxed">Preparing for primary school with confidence,
+                        curiosity, and advanced skills.</p>
+                    <a href="classes/senior-k.g.html"
+                        class="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-white text-ck-gold-bright font-bold text-sm shadow-sm hover:bg-stone-50 hover:scale-105 transition transform active:scale-95">
+                        Learn More
+                    </a>
+                </div>
+
+
+            </div>
+            <!-- Toys Decoration -->
+            <div class="absolute bottom-10 left-10 text-7xl animate-bounce">🧸</div>
+            <div class="absolute bottom-10 right-10 text-7xl animate-pulse">⚽</div>
+            <div class="absolute top-20 right-20 text-6xl animate-float" style="animation-duration: 5s">🎨</div>
+            <div class="absolute bottom-5 left-1/2 -translate-x-1/2 text-6xl animate-bounce"
+                style="animation-duration: 2.5s">🥁</div>
+            <div class="absolute top-10 left-10 text-5xl animate-pulse opacity-40">🚂</div>
+            <div class="absolute top-1/2 right-0 text-6xl animate-float opacity-50">🚀</div>
+            <div class="absolute bottom-32 left-0 text-5xl animate-bounce opacity-70">🦆</div>
+        </div>
+    </section>
+
+
+
+    <!-- TESTIMONIALS SECTION -->
+
+    <section class="py-24 relative overflow-hidden bg-ck-green-dark">
+        <div class="absolute top-10 right-10 text-8xl animate-spin-slow opacity-20">☀️</div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 reveal from-left">
+                <span class="text-ck-yellow-sunny font-bold tracking-widest uppercase text-sm">Parents Trust Us</span>
+                <h2 class="text-4xl lg:text-5xl font-bold text-white mt-2">Happy Parents</h2>
+            </div>
+
+            <!-- Slider Wrapper (Arrows removed, Dots only) -->
+            <div class="swiper testimonial-slider pb-12 reveal from-bottom">
+                <div class="swiper-wrapper">
+                    <!-- Review 1 -->
+                    <div class="swiper-slide px-4 h-auto">
+                        <div
+                            class="bg-white p-8 rounded-[2.5rem] shadow-soft relative group hover:shadow-premium transition duration-500 h-full flex flex-col">
+                            <div class="flex text-yellow-400 mb-4">
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            </div>
+                            <p class="text-slate-600 leading-relaxed mb-6 italic flex-grow">"Scribbles has been a
+                                wonderful gift for all the little angels. It not only provides a nurturing environment
+                                but also a world full of activity and smiles so that they grow to be happy and smart
+                                kids "</p>
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-12 h-12 bg-ck-green-dark/10 rounded-full text-ck-green-dark font-bold flex items-center justify-center">
+                                    DA</div>
+                                <div>
+                                    <h5 class="font-bold text-slate-800">Dr Alekhya</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Review 2 -->
+                    <div class="swiper-slide px-4 h-auto">
+                        <div
+                            class="bg-white p-8 rounded-[2.5rem] shadow-soft relative group hover:shadow-premium transition duration-500 h-full flex flex-col">
+                            <div class="flex text-yellow-400 mb-4">
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            </div>
+                            <p class="text-slate-600 leading-relaxed mb-6 italic flex-grow">"Very caring, good
+                                curriculum, good student teacher ratio, pleasant atmosphere, secure and activity
+                                oriented."</p>
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-12 h-12 bg-ck-gold-deep/10 rounded-full text-ck-gold-deep font-bold flex items-center justify-center">
+                                    UM</div>
+                                <div>
+                                    <h5 class="font-bold text-slate-800">Ushapadmaja m/o Kaveesh</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Review 3 -->
+                    <div class="swiper-slide px-4 h-auto">
+                        <div
+                            class="bg-white p-8 rounded-[2.5rem] shadow-soft relative group hover:shadow-premium transition duration-500 h-full flex flex-col">
+                            <div class="flex text-yellow-400 mb-4">
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            </div>
+                            <p class="text-slate-600 leading-relaxed mb-6 italic flex-grow">"Its a great privilege for
+                                us being a part of the school. A real time education along with communication skills are
+                                being taught in school which makes this school a unique one. Emphasizing on quality
+                                education is highly appreciated. Thanks for the management"</p>
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-12 h-12 bg-ck-green-leaf/10 rounded-full text-ck-green-leaf font-bold flex items-center justify-center">
+                                    SA</div>
+                                <div>
+                                    <h5 class="font-bold text-slate-800">SANTOSH</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 4 -->
+                    <div class="swiper-slide px-4 h-auto">
+                        <div
+                            class="bg-white p-8 rounded-[2.5rem] shadow-soft relative group hover:shadow-premium transition duration-500 h-full flex flex-col">
+                            <div class="flex text-yellow-400 mb-4">
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            </div>
+                            <p class="text-slate-600 leading-relaxed mb-6 italic flex-grow">"Our daughter looks forward
+                                to coming to school every single day. The teachers truly care about each child's
+                                individual growth."</p>
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-12 h-12 bg-ck-gold-warm/10 rounded-full text-ck-gold-warm font-bold flex items-center justify-center">
+                                    AR</div>
+                                <div>
+                                    <h5 class="font-bold text-slate-800">Amit Reddy</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 5 -->
+                    <div class="swiper-slide px-4 h-auto">
+                        <div
+                            class="bg-white p-8 rounded-[2.5rem] shadow-soft relative group hover:shadow-premium transition duration-500 h-full flex flex-col">
+                            <div class="flex text-yellow-400 mb-4">
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            </div>
+                            <p class="text-slate-600 leading-relaxed mb-6 italic flex-grow">"Simply good and caring and
+                                nice teaching skills.."</p>
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-12 h-12 bg-ck-green-mid/10 rounded-full text-ck-green-mid font-bold flex items-center justify-center">
+                                    BM</div>
+                                <div>
+                                    <h5 class="font-bold text-slate-800">B.manasa Priyanka</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 6 -->
+                    <div class="swiper-slide px-4 h-auto">
+                        <div
+                            class="bg-white p-8 rounded-[2.5rem] shadow-soft relative group hover:shadow-premium transition duration-500 h-full flex flex-col">
+                            <div class="flex text-yellow-400 mb-4">
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            </div>
+                            <p class="text-slate-600 leading-relaxed mb-6 italic flex-grow">"Very nice in academics and
+                                my child is so happy to go Little Scribbles everyday."</p>
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-12 h-12 bg-ck-green-dark/10 rounded-full text-ck-green-dark font-bold flex items-center justify-center">
+                                    PK</div>
+                                <div>
+                                    <h5 class="font-bold text-slate-800">padmakumari</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Only Pagination Dots remain -->
+                <div class="swiper-pagination !static mt-10"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LATEST FROM OUR BLOG (White Section) -->
+    <!--
+    <section class="py-24 bg-white relative overflow-hidden">
+        <div class="absolute top-10 left-10 text-7xl animate-float opacity-40">📖</div>
+        <div class="absolute bottom-10 right-10 text-6xl animate-float opacity-40" style="animation-delay: 1s">✍️</div>
+        <div class="absolute top-1/2 right-20 text-5xl animate-pulse opacity-30">💭</div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal from-top">
+                <span class="text-ck-green-dark font-bold tracking-widest uppercase text-sm">From Our Blog</span>
+                <h2 class="text-4xl lg:text-5xl font-bold text-slate-800 mt-2">
+                    Latest <span class="text-hand text-ck-gold-deep">Stories</span>
+                </h2>
+                <p class="text-slate-600 mt-4 max-w-2xl mx-auto">
+                    Parenting tips, school moments, and insights from our educators
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <article
+                    class="bg-white rounded-[2.5rem] shadow-lg hover:shadow-premium transition duration-500 overflow-hidden group reveal from-bottom border border-slate-100">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=600"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <span
+                            class="absolute top-4 left-4 bg-ck-green-dark px-4 py-1 rounded-full text-xs font-bold text-white shadow-lg">
+                            Activities
+                        </span>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-2 text-slate-400 text-xs font-bold mb-4">
+                            <i data-lucide="calendar" class="w-3 h-3 text-ck-green-mid"></i>
+                            <span>Oct 12, 2025</span>
+                        </div>
+                        <h3
+                            class="text-2xl font-bold text-slate-800 mb-4 group-hover:text-ck-green-dark transition line-clamp-2">
+                            Why Messy Play is Crucial
+                        </h3>
+                        <p class="text-slate-600 mb-6 line-clamp-3 text-sm leading-relaxed">
+                            Finger painting and playing with mud are essential for sensory development and creativity.
+                            It's how little minds explore texture and cause-and-effect.
+                        </p>
+                        <a href="about/blog.html"
+                            class="text-ck-green-dark font-bold text-sm flex items-center gap-2 group/link">
+                            <span>Read Full Story</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4 group-hover/link:translate-x-2 transition"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article
+                    class="bg-white rounded-[2.5rem] shadow-lg hover:shadow-premium transition duration-500 overflow-hidden group reveal from-bottom delay-200 border border-slate-100">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="https://thumbs.dreamstime.com/b/child-girl-painted-hands-kids-drawing-coloring-teacher-daycare-center-playschool-108901428.jpg"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <span
+                            class="absolute top-4 left-4 bg-ck-gold-deep px-4 py-1 rounded-full text-xs font-bold text-white shadow-lg">
+                            Parenting
+                        </span>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-2 text-slate-400 text-xs font-bold mb-4">
+                            <i data-lucide="calendar" class="w-3 h-3 text-ck-gold-deep"></i>
+                            <span>Oct 05, 2025</span>
+                        </div>
+                        <h3
+                            class="text-2xl font-bold text-slate-800 mb-4 group-hover:text-ck-gold-deep transition line-clamp-2">
+                            Gentle Discipline Guide
+                        </h3>
+                        <p class="text-slate-600 mb-6 line-clamp-3 text-sm leading-relaxed">
+                            Handling tantrums with patience can be tough. We share 5 heart-centered strategies to help
+                            manage big emotions and build trust.
+                        </p>
+                        <a href="about/blog.html"
+                            class="text-ck-gold-deep font-bold text-sm flex items-center gap-2 group/link">
+                            <span>Read Full Story</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4 group-hover/link:translate-x-2 transition"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article
+                    class="bg-white rounded-[2.5rem] shadow-lg hover:shadow-premium transition duration-500 overflow-hidden group reveal from-bottom delay-400 border border-slate-100">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <span
+                            class="absolute top-4 left-4 bg-ck-green-mid px-4 py-1 rounded-full text-xs font-bold text-white shadow-lg">
+                            Diaries
+                        </span>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-2 text-slate-400 text-xs font-bold mb-4">
+                            <i data-lucide="calendar" class="w-3 h-3 text-ck-green-mid"></i>
+                            <span>Sep 28, 2025</span>
+                        </div>
+                        <h3
+                            class="text-2xl font-bold text-slate-800 mb-4 group-hover:text-ck-green-dark transition line-clamp-2">
+                            A Day at CleverKitty
+                        </h3>
+                        <p class="text-slate-600 mb-6 line-clamp-3 text-sm leading-relaxed">
+                            Ever wondered what your child does all day? Take a peek into our daily circle, garden
+                            adventures, and creative play routine.
+                        </p>
+                        <a href="about/blog.html"
+                            class="text-ck-green-dark font-bold text-sm flex items-center gap-2 group/link">
+                            <span>Read Full Story</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4 group-hover/link:translate-x-2 transition"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="text-center mt-12 reveal from-bottom">
+                <a href="about/blog.html"
+                    class="px-10 py-4 custom-gradient-green text-white rounded-full font-bold text-lg shadow-premium hover:scale-105 hover:shadow-gold-glow transition inline-flex items-center gap-2 transform active:scale-95">
+                    <span>View All Stories</span>
+                    <i data-lucide="book-open" class="w-5 h-5"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    -->
+
+    <!-- GALLERY (White Section) -->
+    <section id="gallery" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl lg:text-5xl font-bold text-ck-green-dark mb-12 reveal from-top">Moments of <span
+                    class="text-hand text-ck-gold-deep">Joy</span></h2>
+
+            <div class="absolute top-20 left-10 text-7xl animate-float opacity-60">🎈</div>
+            <div class="absolute bottom-10 right-10 text-6xl rotate-12 opacity-60">📷</div>
+            <div class="absolute top-32 right-20 text-5xl animate-pulse opacity-40">🎨</div>
+            <div class="absolute bottom-32 left-10 text-5xl animate-pulse opacity-40">📸</div>
+            <div class="absolute top-1/2 left-20 text-5xl animate-sway opacity-50">🖍️</div>
+
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
+                <!-- 1. Feature (Large Square) -->
+                <div
+                    class="col-span-2 row-span-2 rounded-[2.5rem] overflow-hidden shadow-lg group relative reveal from-left h-64 md:h-96 lg:h-auto min-h-[300px]">
+                    <img src="assets/gallery-01.jpg"
+                        class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition"></div>
+                </div>
+
+                <!-- 2. Small -->
+                <div
+                    class="col-span-1 rounded-[2.5rem] overflow-hidden shadow-lg group relative reveal from-top delay-200 h-40 md:h-48 lg:h-64">
+                    <img src="assets/gallery-02.jpg"
+                        class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                </div>
+
+                <!-- 3. Small -->
+                <div
+                    class="col-span-1 rounded-[2.5rem] overflow-hidden shadow-lg group relative reveal from-right delay-300 h-40 md:h-48 lg:h-64">
+                    <img src="assets/gallery-03.jpg"
+                        class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                </div>
+
+                <!-- 4. Small -->
+                <div
+                    class="col-span-1 rounded-[2.5rem] overflow-hidden shadow-lg group relative reveal from-bottom delay-400 h-40 md:h-48 lg:h-64">
+                    <img src="assets/gallery-04.jpg"
+                        class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                </div>
+
+                <!-- 5. Small -->
+                <div
+                    class="col-span-1 rounded-[2.5rem] overflow-hidden shadow-lg group relative reveal from-bottom delay-500 h-40 md:h-48 lg:h-64">
+                    <img src="assets/gallery-05.jpg"
+                        class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                </div>
+
+                <!-- 6. Wide -->
+                <div
+                    class="col-span-2 rounded-[2.5rem] overflow-hidden shadow-lg group relative reveal from-left delay-200 h-48 md:h-64">
+                    <img src="assets/gallery-06.jpg"
+                        class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                </div>
+
+                <!-- 7. Wide -->
+                <div
+                    class="col-span-2 rounded-[2.5rem] overflow-hidden shadow-lg group relative reveal from-right delay-300 h-48 md:h-64">
+                    <img src="assets/gallery-07.jpg"
+                        class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                </div>
+            </div>
+
+            <div class="mt-12 reveal from-bottom text-center">
+                <a href="about/gallery.html"
+                    class="px-10 py-4 custom-gradient-green text-white rounded-full font-bold text-lg shadow-premium hover:scale-105 hover:shadow-gold-glow transition inline-flex items-center gap-2 transform active:scale-95">
+                    <span>View All Photos</span>
+                    <i data-lucide="camera" class="w-5 h-5"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PREMIUM CTA (Green Section) -->
+    <section class="py-20 px-4 relative overflow-hidden bg-ck-yellow-pale">
+        <div
+            class="max-w-5xl mx-auto custom-gradient-green rounded-[3rem] p-12 lg:p-24 text-center text-white shadow-premium relative overflow-hidden reveal from-bottom">
+            <div class="relative z-10">
+                <h2 class="text-4xl lg:text-6xl font-bold mb-6">Invest in Their Future</h2>
+                <p class="text-xl text-stone-50 mb-10 max-w-2xl mx-auto font-medium">Limited seats available for the
+                    upcoming term. Secure your child's spot in our award-winning programs.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="contact.html"
+                        class="px-10 py-4 bg-slate-900 text-white rounded-full font-bold text-lg shadow-lg hover:bg-slate-800 hover:scale-105 transition transform active:scale-95">
+                        Apply Now
+                    </a>
+                    <a href="brochure.html"
+                        class="px-10 py-4 bg-transparent border-2 border-white text-white rounded-full font-bold text-lg hover:bg-white/10 transition">
+                        Open Brochure
+                    </a>
+                </div>
+            </div>
+            <!-- Decorative Circles -->
+            <div class="absolute top-0 right-0 w-64 h-64 bg-white opacity-10 rounded-full -mr-32 -mt-32 blur-2xl"></div>
+            <div class="absolute bottom-0 left-0 w-64 h-64 bg-white opacity-10 rounded-full -ml-32 -mb-32 blur-2xl">
+            </div>
+            <div class="absolute bottom-10 left-10 text-6xl animate-bounce z-20" style="animation-duration: 3s">🌱</div>
+            <div class="absolute bottom-10 right-10 text-6xl animate-float z-20">🎓</div>
+            <div class="absolute top-10 left-10 text-5xl animate-pulse opacity-60 z-20">🎊</div>
+            <div class="absolute top-10 right-10 text-5xl animate-pulse opacity-60 z-20">✨</div>
+            <div class="absolute bottom-5 left-1/2 -translate-x-1/2 text-5xl animate-bounce z-20">🏆</div>
+        </div>
+    </section>
+
+    <footer class="-mt-[1px] bg-ck-green-dark text-white pt-16 pb-8 relative overflow-hidden font-sans">
+        <!-- Grass Top Divider (Seamless transition from map) -->
+        <div class="absolute top-0 left-0 w-full overflow-hidden leading-none z-20">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none" class="relative block w-full h-12 fill-[#fbeba9]">
+                <path
+                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z">
+                </path>
+            </svg>
+        </div>
+
+        <!-- Fireflies Decorations -->
+        <div class="absolute inset-0 z-0 pointer-events-none">
+            <div
+                class="absolute top-1/4 left-1/4 w-1.5 h-1.5 bg-ck-yellow-sunny rounded-full animate-firefly shadow-[0_0_15px_#fccd22]">
+            </div>
+            <div
+                class="absolute top-3/4 right-1/3 w-2 h-2 bg-ck-yellow-sunny rounded-full animate-firefly delay-700 shadow-[0_0_20px_#fccd22]">
+            </div>
+            <div class="absolute top-1/2 right-10 w-1 h-1 bg-white rounded-full animate-pulse opacity-30"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid md:grid-cols-4 gap-12 lg:gap-16 mb-10">
+                <!-- Col 1: Brand -->
+                <div class="flex flex-col items-center md:items-center text-center md:text-center space-y-6">
+                    <a href="index.html"
+                        class="inline-block bg-white p-4 rounded-[2rem] shadow-premium hover:scale-105 transition duration-500">
+                        <img src="assets/Cleverkitty_new_logo-removebg-preview.png" class="h-16 w-auto object-contain"
+                            alt="CleverKitty">
+                    </a>
+                    <p class="text-white/80 leading-relaxed font-bold">
+                        Play is our pedagogy.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="https://www.facebook.com/cleverkitty2019" target="_blank"
+                            class="w-12 h-12 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl flex items-center justify-center hover:bg-white hover:text-ck-green-dark hover:border-white transition-all duration-500 hover:-translate-y-2 shadow-2xl">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://www.instagram.com/cleverkitty2019/" target="_blank"
+                            class="w-12 h-12 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl flex items-center justify-center hover:bg-white hover:text-ck-green-dark hover:border-white transition-all duration-500 hover:-translate-y-2 shadow-2xl">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@cleverkittyplayschool4164" target="_blank"
+                            class="w-12 h-12 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl flex items-center justify-center hover:bg-white hover:text-ck-green-dark hover:border-white transition-all duration-500 hover:-translate-y-2 shadow-2xl">
+                            <i data-lucide="youtube" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://x.com/cleverkittyp" target="_blank"
+                            class="w-12 h-12 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl flex items-center justify-center hover:bg-white hover:text-ck-green-dark hover:border-white transition-all duration-500 hover:-translate-y-2 shadow-2xl">
+                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/112421185/" target="_blank"
+                            class="w-12 h-12 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl flex items-center justify-center hover:bg-white hover:text-ck-green-dark hover:border-white transition-all duration-500 hover:-translate-y-2 shadow-2xl">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Programs -->
+                <div class="md:pl-10">
+                    <h4 class="text-2xl font-hand font-bold mb-4 text-ck-yellow-sunny flex items-center gap-2">
+                        <span class="text-ck-gold-bright">✦</span> Programs
+                    </h4>
+                    <ul class="space-y-2 font-bold opacity-80 text-base">
+                        <li><a href="classes/play-group.html"
+                                class="hover:text-ck-yellow-sunny transition flex items-center gap-2 group">
+                                <i data-lucide="check-circle"
+                                    class="w-4 h-4 text-ck-gold-deep group-hover:text-ck-yellow-sunny transition"></i>
+                                PlayGroup</a>
+                        </li>
+                        <li><a href="classes/nursery.html"
+                                class="hover:text-ck-yellow-sunny transition flex items-center gap-2 group">
+                                <i data-lucide="check-circle"
+                                    class="w-4 h-4 text-ck-gold-deep group-hover:text-ck-yellow-sunny transition"></i>
+                                Nursery</a>
+                        </li>
+                        <li><a href="classes/junior-k.g.html"
+                                class="hover:text-ck-yellow-sunny transition flex items-center gap-2 group">
+                                <i data-lucide="check-circle"
+                                    class="w-4 h-4 text-ck-gold-deep group-hover:text-ck-yellow-sunny transition"></i>
+                                Junior KG</a>
+                        </li>
+                        <li><a href="classes/senior-k.g.html"
+                                class="hover:text-ck-yellow-sunny transition flex items-center gap-2 group">
+                                <i data-lucide="check-circle"
+                                    class="w-4 h-4 text-ck-gold-deep group-hover:text-ck-yellow-sunny transition"></i>
+                                Senior KG</a>
+                        </li>
+                        <li><a href="classes/daycare.html"
+                                class="hover:text-ck-yellow-sunny transition flex items-center gap-2 group">
+                                <i data-lucide="check-circle"
+                                    class="w-4 h-4 text-ck-gold-deep group-hover:text-ck-yellow-sunny transition"></i>
+                                Daycare</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Quick Links -->
+                <div>
+                    <h4 class="text-2xl font-hand font-bold mb-4 text-ck-yellow-sunny flex items-center gap-2">
+                        <span class="text-ck-gold-bright">✦</span> Quick Links
+                    </h4>
+                    <ul class="space-y-2 font-bold opacity-80 text-base">
+                        <li><a href="index.html"
+                                class="hover:text-ck-yellow-sunny transition flex items-center gap-2 group">
+                                <i data-lucide="check-circle"
+                                    class="w-4 h-4 text-ck-gold-deep group-hover:text-ck-yellow-sunny transition"></i>
+                                Home</a></li>
+                        <li><a href="about.html"
+                                class="hover:text-ck-yellow-sunny transition flex items-center gap-2 group">
+                                <i data-lucide="check-circle"
+                                    class="w-4 h-4 text-ck-gold-deep group-hover:text-ck-yellow-sunny transition"></i>
+                                About Us</a></li>
+                        <li><a href="classes.html"
+                                class="hover:text-ck-yellow-sunny transition flex items-center gap-2 group">
+                                <i data-lucide="check-circle"
+                                    class="w-4 h-4 text-ck-gold-deep group-hover:text-ck-yellow-sunny transition"></i>
+                                Classes</a></li>
+                        <li><a href="contact.html"
+                                class="hover:text-ck-yellow-sunny transition flex items-center gap-2 group">
+                                <i data-lucide="check-circle"
+                                    class="w-4 h-4 text-ck-gold-deep group-hover:text-ck-yellow-sunny transition"></i>
+                                Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Visit Us (Enhanced Icons) -->
+                <div>
+                    <h4 class="text-2xl font-hand font-bold mb-4 text-ck-yellow-sunny flex items-center gap-2">
+                        <span class="text-ck-gold-bright">✦</span> Visit Us
+                    </h4>
+                    <address class="not-italic space-y-3">
+                        <div class="flex items-center gap-4 group">
+                            <div
+                                class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-ck-yellow-sunny/20 transition">
+                                <i data-lucide="map-pin" class="w-5 h-5 text-ck-yellow-sunny"></i>
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <span class="text-white/80 font-bold text-base leading-relaxed">
+                                    Simhachalam Rd, Srinivas Nagar, Prahaladapuram.
+                                </span>
+                                <span class="text-white/80 font-bold text-base leading-relaxed">
+                                    Near Prasanthi Nagar, Pendurthi.
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 group">
+                            <div
+                                class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-ck-yellow-sunny/20 transition">
+                                <i data-lucide="phone" class="w-5 h-5 text-ck-yellow-sunny"></i>
+                            </div>
+                            <a href="tel:+919652036036"
+                                class="text-white/80 font-black text-base hover:text-white transition">
+                                +91 96520 36036
+                            </a>
+                        </div>
+                        <div class="flex items-center gap-4 group">
+                            <div
+                                class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-ck-yellow-sunny/20 transition">
+                                <i data-lucide="mail" class="w-5 h-5 text-ck-yellow-sunny"></i>
+                            </div>
+                            <a href="mailto:cleverkittyp@gmail.com"
+                                class="text-white/80 font-black text-base hover:text-white transition">
+                                cleverkittyp@gmail.com
+                            </a>
+                        </div>
+                    </address>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-white/10 pt-8 text-center text-xs md:text-sm font-black tracking-widest uppercase text-white flex flex-col md:flex-row justify-between items-center gap-4">
+                <p>© 2026 CleverKitty Daycare & Play School</p>
+                <div class="flex gap-8">
+                    <a href="index.html" class="hover:text-ck-yellow-sunny transition">Privacy Policy</a>
+                    <a href="index.html" class="hover:text-ck-yellow-sunny transition">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        lucide.createIcons();
+
+        // Swiper initialization (Navigation removed)
+        new Swiper('.testimonial-slider', {
+            slidesPerView: 1,
+            slidesPerGroup: 1,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: { delay: 4000, disableOnInteraction: false },
+            pagination: { el: '.swiper-pagination', clickable: true },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                    slidesPerGroup: 1
+                },
+                1024: {
+                    slidesPerView: 3,
+                    slidesPerGroup: 1
+                }
+            }
+        });
+
+        // Intersection Observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Mobile Menu Logic
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const mobileClose = document.getElementById('mobile-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function openMenu() {
+            if (mobileMenu) {
+                mobileMenu.classList.remove('hidden');
+                mobileMenu.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeMenu() {
+            if (mobileMenu) {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        if (mobileToggle) mobileToggle.addEventListener('click', openMenu);
+        if (mobileClose) mobileClose.addEventListener('click', closeMenu);
+
+        // Close menu when clicking any link
+        if (mobileMenu) {
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', closeMenu);
+            });
+        }
+
+        // Mobile Submenu Logic
+        window.toggleMobileSubmenu = function (id) {
+            const submenu = document.getElementById(id);
+            const icon = document.getElementById('icon-' + id);
+            if (submenu && icon) {
+                if (submenu.classList.contains('hidden')) {
+                    submenu.classList.remove('hidden');
+                    icon.style.transform = 'rotate(180deg)';
+                } else {
+                    submenu.classList.add('hidden');
+                    icon.style.transform = 'rotate(0deg)';
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
